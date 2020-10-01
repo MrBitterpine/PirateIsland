@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="meme/style.css">
+    <title>Memes</title>
+</head>
+<style>
+  h1{
+    color: white;
+  }
+body{
+  background-color: black;
+}
+img{
+  border-radius:5px;
+  border:5px solid white;
+  box-shadow:7px 7px #444;
+}</style>
+<body>
+  <h1>This weeks Top reddit memes</h1>
+    <ul></ul>
+    <script>const request_URL = 'https://www.reddit.com/r/memes/top/.json?sort=top&t=week&limit=100';
+const imageList = document.querySelector('ul');
+//Start the fetching request with request_URL
+fetch(request_URL)
+  .then(data => {
+    return data.json(); //Returning the data blob to the fetch request so we can extract the JSON from it.
+  }).then(posts => {
+    posts.data.children.forEach(post => {
+
+      //Defining 'PostObject'
+      let postObject = {
+        imgurl: post.data.url
+      }
+
+      //Adding a new element to the UL html element.
+      imageList.innerHTML += addNewImage(postObject);
+    })
+  });
+
+
+function addNewImage(postObject) {
+if (postObject.imgurl.endsWith("png") || postObject.imgurl.endsWith("jpg") || postObject.imgurl.endsWith("jpeg") || postObject.imgurl.endsWith("webp")){
+var image = "<li><img src=\""+ postObject.imgurl +"\"></li>"
+  return image
+  }else return "<li><img src=\"https://qph.fs.quoracdn.net/main-qimg-864522b7c55e55886b2514b6ed325dc9.webp\"></li>";
+}
+</script>
+</body>
+
+</html>
