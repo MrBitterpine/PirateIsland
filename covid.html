@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <title>Covid-19 Update</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
   .warn{
   margin: 0;
@@ -35,6 +36,8 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+    .roundcorner{
+    border-radius:20px;}
 </style>
 </head>
 
@@ -54,17 +57,19 @@
 
     <div class="w3-row-padding w3-margin-bottom">
       <div class="w3-quarter">
-        <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-container w3-red w3-padding-16 roundcorner">
           <div class="w3-left">
+          <h2><i class="fa fa-virus"></i></h2>
             <h3 id="totalLK">0</h3>
           </div>
           <div class="w3-clear"></div>
-          <h4>Total Cases</h4>
+          <h4> Total Cases</h4>
         </div>
       </div>
       <div class="w3-quarter">
-        <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-container w3-blue w3-padding-16 roundcorner">
           <div class="w3-left">
+          <h2><i class="fa fa-bed-pulse"></i> </h2>
             <h3 id="activeLK">0</h3>
           </div>
           <div class="w3-clear"></div>
@@ -72,8 +77,9 @@
         </div>
       </div>
       <div class="w3-quarter">
-        <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-container w3-teal w3-padding-16 roundcorner">
           <div class="w3-left">
+          <h2><i class="fa fa-skull-crossbones"></i></h2>
             <h3 id="deathLK">0</h3>
           </div>
           <div class="w3-clear"></div>
@@ -81,8 +87,9 @@
         </div>
       </div>
       <div class="w3-quarter">
-        <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-container w3-orange w3-text-white w3-padding-16 roundcorner">
           <div class="w3-left">
+          <h2><i class="fa fa-file-waveform"></i> </h2>
             <h3 id="newLK">0</h3>
           </div>
           <div class="w3-clear"></div>
@@ -98,8 +105,9 @@
 
     <div class="w3-row-padding w3-margin-bottom">
       <div class="w3-quarter">
-        <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-container w3-red w3-padding-16 roundcorner">
           <div class="w3-left">
+          <h2><i class="fa fa-virus"></i></h2>
             <h3 id="totalW">0</h3>
           </div>
           <div class="w3-clear"></div>
@@ -107,8 +115,9 @@
         </div>
       </div>
       <div class="w3-quarter">
-        <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-container w3-blue w3-padding-16 roundcorner">
           <div class="w3-left">
+          <h2><i class="fa fa-bed-pulse"></i> </h2>
             <h3 id="activeW">0</h3>
           </div>
           <div class="w3-clear"></div>
@@ -116,8 +125,9 @@
         </div>
       </div>
       <div class="w3-quarter">
-        <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-container w3-teal w3-padding-16 roundcorner">
           <div class="w3-left">
+          <h2><i class="fa fa-skull-crossbones"></i></h2>
             <h3 id="deathW">0</h3>
           </div>
           <div class="w3-clear"></div>
@@ -125,8 +135,9 @@
         </div>
       </div>
       <div class="w3-quarter">
-        <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-container w3-orange w3-text-white w3-padding-16 roundcorner">
           <div class="w3-left">
+          <h2><i class="fa fa-file-waveform"></i> </h2>
             <h3 id="newW">0</h3>
           </div>
           <div class="w3-clear"></div>
@@ -134,38 +145,6 @@
         </div>
       </div>
     </div>
-
-
-    <!--
-  
-    <div class="w3-panel">
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-twothird">
-          <h5>World</h5>
-          <table class="w3-table w3-striped w3-white">
-            <tr>
-              <td>Total Cases</td>
-              <td><i id="totalW">0</i></td>
-            </tr>
-            <tr>
-              <td>Active Cases</td>
-              <td><i id="activeW">0</i></td>
-            </tr>
-            <tr>
-              <td>New Cases</td>
-              <td><i id="newW">0</i></td>
-            </tr>
-            <tr>
-              <td>Deaths</td>
-              <td><i id="deathW">0</i></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
--->
-
-
 
   </div>
 
