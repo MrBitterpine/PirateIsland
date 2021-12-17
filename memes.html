@@ -6,15 +6,31 @@
  <title>Memes</title>
   <link rel="stylesheet" href="meme/style.css" />
 
+<style>
+.parallax {
+      /* The image used */
+      background-image: url('images/background3.jpg');
 
+      /* Full height */
+      height: 100%;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+</style>
 </head>
 
 <body>
   <div class="loader" id="loader"></div>
+  <div class="parallax">
   <ul class="meme" id="memeul"></ul>
+  </div>
   <script>
     const request_URL =
-      "https://www.reddit.com/r/memes/top/.json?sort=top&t=week&limit=100";
+      "https://www.reddit.com/r/tkasylum/top/.json?sort=top&t=week&limit=100";
     const imageList = document.getElementById("memeul");
     //Start the fetching request with request_URL
     fetch(request_URL)

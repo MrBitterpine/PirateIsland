@@ -16,7 +16,10 @@ li.meme {
 img.meme {
   width: 300px;
   object-fit: cover;
-  border-radius: 7px;
+  border-color: #2600b5;
+  border-style: solid;
+  border-width: 10px;
+  border-radius: 20px;
 }
 
 .loader {

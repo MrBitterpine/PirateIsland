@@ -5,10 +5,24 @@
 
   <title>Funny Videos</title>
   <link rel="stylesheet" href="gallery/style.css">
-  
+  <style>
+.parallax {
+      /* The image used */
+      background-image: url('images/background3.jpg');
+
+      /* Full height */
+      height: 100%;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+</style>
 </head>
 
-<body>
+<body class="parallax">
   <div class="container">
     <br>
     <br>
@@ -677,7 +691,6 @@
       videoPlayer.style.display = "block";
     }
   </script>
-
 
 </body>
 
