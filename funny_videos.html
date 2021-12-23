@@ -3,695 +3,118 @@
 
 <head>
 
-  <title>Funny Videos</title>
-  <link rel="stylesheet" href="gallery/style.css">
-  <style>
+<title>Funny Videos</title>
+<style>
+.container{
+width: 80%;
+margin: 80px auto;
+}
 .parallax {
-      /* The image used */
-      background-image: url('images/background3.jpg');
+    /* The image used */
+    background-image: url('images/background3.jpg');
 
-      /* Full height */
-      height: 100%;
+    /* Full height */
+    height: 100%;
 
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     }
+p{font-family: Arial, Helvetica, sans-serif;
+margin-left: 20px;
+color:#000000;
+line-height: 22px;
+font-size: 20px;}
+ul{
+
+
+list-style: none;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+row-gap: 30px;
+column-gap: 40px;}
+li{
+padding: 0px 0px;
+background-color: ghostwhite;
+border-radius: 20px;
+overflow: hidden;
+cursor: pointer;}
+.video-player{
+/*width: 80%;*/
+height: 80%;
+position: fixed;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+display: none;
+overflow: hidden;
+}
+video:focus{
+outline: none;
+}
+
+.close{
+position: absolute;
+top: 10px;
+right: 10px;
+width: 30px;
+cursor: pointer;
+}
 </style>
 </head>
 
 <body class="parallax">
-  <div class="container">
-    <br>
-    <br>
-    <h1>COOL VIDEOS LOL!!</h1>
-
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117379995336724/anime_chase.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117379995336724/anime_chase.mp4
-            " />
-          </div>
-          <p>Anime Chase</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117615895969822/big_sound.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117615895969822/big_sound.mp4
-            " />
-          </div>
-          <p>Big Sound</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117686514810891/big_chungus.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117686514810891/big_chungus.mp4
-            " />
-          </div>
-          <p>Big Chungus</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117738243686450/Big_oof.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117738243686450/Big_oof.mp4
-            " />
-          </div>
-          <p>Big Oof</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117744434479164/bish.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117744434479164/bish.mp4
-            " />
-          </div>
-          <p>Bish</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117744618373120/be_a_man.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117744618373120/be_a_man.mp4
-            " />
-          </div>
-          <p>Be a man</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117764755882045/blend_obama.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117764755882045/blend_obama.mp4
-            " />
-          </div>
-          <p>Blend Obama</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117793222754304/BirthdayCake.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117793222754304/BirthdayCake.mp4
-            " />
-          </div>
-          <p>Birthday Cake</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762117831008845834/beat_em_up-1.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762117831008845834/beat_em_up-1.mp4
-            " />
-          </div>
-          <p>Beat em up</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118424180031508/culture.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118424180031508/culture.mp4
-            " />
-          </div>
-          <p>Culture</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118437132304394/caramelladansen.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118437132304394/caramelladansen.mp4
-            " />
-          </div>
-          <p>Caramel landsen</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118445038436413/gaynichan.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118445038436413/gaynichan.mp4
-            " />
-          </div>
-          <p>Gaynichan</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118452483325982/bts.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118452483325982/bts.mp4
-            " />
-          </div>
-          <p>Bts</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118474121478144/boobs.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118474121478144/boobs.mp4
-            " />
-          </div>
-          <p>Boobs</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118474256089098/bruh.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118474256089098/bruh.mp4
-            " />
-          </div>
-          <p>Bruh</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118483722895380/imposter_sp.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118483722895380/imposter_sp.mp4
-            " />
-          </div>
-          <p>Imposter Sp</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118502148341790/im_a_dog.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118502148341790/im_a_dog.mp4
-            " />
-          </div>
-          <p>Im a dog</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118520825708584/eat_ass.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118520825708584/eat_ass.mp4
-            " />
-          </div>
-          <p>Eat ass</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118521994870784/life_is_a_dream.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118521994870784/life_is_a_dream.mp4
-            " />
-          </div>
-          <p>Life is a dream</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118560838320139/el_muchacho.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118560838320139/el_muchacho.mp4
-            " />
-          </div>
-          <p>El muchacho 😭</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118566681509899/IM_NOT_LETTING_YOU_DIE.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118566681509899/IM_NOT_LETTING_YOU_DIE.mp4
-            " />
-          </div>
-          <p>IM_NOT_LETTING_YOU_DIE</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118568660697118/gae_zone.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118568660697118/gae_zone.mp4
-            " />
-          </div>
-          <p>gae_zone</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118574138720286/cucumba.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118574138720286/cucumba.mp4
-            " />
-          </div>
-          <p>Cu-cumba</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118578870157362/fbi_gotcha.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118578870157362/fbi_gotcha.mp4
-            " />
-          </div>
-          <p>FBI</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118586507853845/hardware_store_1.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118586507853845/hardware_store_1.mp4
-            " />
-          </div>
-          <p>HArdware store</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118674050973696/cancel_2020.mov')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118674050973696/cancel_2020.mov
-            " />
-          </div>
-          <p>CANCEL 2020</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118680178982912/endless_video_1-1.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118680178982912/endless_video_1-1.mp4
-            " />
-          </div>
-          <p>Endless video</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118683098480720/honkler.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118683098480720/honkler.mp4
-            " />
-          </div>
-          <p>HOlnkleR</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118697287942224/ea_bug.mov')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118697287942224/ea_bug.mov
-            " />
-          </div>
-          <p>EA bug</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118718872092692/free_minecraft.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118718872092692/free_minecraft.mp4
-            " />
-          </div>
-          <p>Freeee Minecraft</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118723129180170/football.webm')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118723129180170/football.webm
-            " />
-          </div>
-          <p>FIFA JOke 😂😂</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118808885395483/monki.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118808885395483/monki.mp4
-            " />
-          </div>
-          <p>Monki</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118850489090068/ph_kids.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118850489090068/ph_kids.mp4
-            " />
-          </div>
-          <p>PH kids</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118864472506438/recycle_the_bin.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118864472506438/recycle_the_bin.mp4
-            " />
-          </div>
-          <p>Recycle the bin ♻</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118870860562462/no_cuss.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118870860562462/no_cuss.mp4
-            " />
-          </div>
-          <p>No cuss</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118911180800040/weeeeeeeeeeeeee.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118911180800040/weeeeeeeeeeeeee.mp4
-            " />
-          </div>
-          <p>Weeeeeeeeeeeeeeeee</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118920894152734/video0.mov')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118920894152734/video0.mov
-            " />
-          </div>
-          <p>Video 404</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118956004671488/where_did_you_learn_to_drive.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118956004671488/where_did_you_learn_to_drive.mp4
-            " />
-          </div>
-          <p>Driving</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118963432783892/meet_the_pyro.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118963432783892/meet_the_pyro.mp4
-            " />
-          </div>
-          <p>PYRO</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118970466762752/phineas_mad.mov')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118970466762752/phineas_mad.mov
-            " />
-          </div>
-          <p>phineas_mad</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762118998492971008/trap_battle.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762118998492971008/trap_battle.mp4
-            " />
-          </div>
-          <p>trap_battle</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119013849235496/shrek_short.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119013849235496/shrek_short.mp4
-            " />
-          </div>
-          <p>ShREK</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119030802087936/nigga.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119030802087936/nigga.mp4
-            " />
-          </div>
-          <p>Nigga</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119052478382090/monki_flip.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119052478382090/monki_flip.mp4
-            " />
-          </div>
-          <p>Monki Fllip</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119107163193354/ricardo4ever-1.webm')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119107163193354/ricardo4ever-1.webm
-            " />
-          </div>
-          <p>ricardo4ever-1</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119125551284244/you_are_....mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119125551284244/you_are_....mp4
-            " />
-          </div>
-          <p>You are .......</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119137198735380/steve_fart.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119137198735380/steve_fart.mp4
-            " />
-          </div>
-          <p>FART 💨</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119182065205258/video0_1-1.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119182065205258/video0_1-1.mp4
-            " />
-          </div>
-          <p>Video</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119194824409088/spiderverse_putin.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119194824409088/spiderverse_putin.mp4
-            " />
-          </div>
-          <p>Putin</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119209286631434/video1.mov')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119209286631434/video1.mov
-            " />
-          </div>
-          <p>video 1</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119212956909568/no_one_asked_mc.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119212956909568/no_one_asked_mc.mp4
-            " />
-          </div>
-          <p>no one assked</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119216617750528/size_matters.mov')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119216617750528/size_matters.mov
-            " />
-          </div>
-          <p>Size matters</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119218392072192/There_is_no_fridge_with_epic_music_in_the_background.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119218392072192/There_is_no_fridge_with_epic_music_in_the_background.mp4
-            " />
-          </div>
-          <p>There_is_no_fridge_with_epic_music_in_the_background</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119228789882900/shot_on_iphone.mp4')">
-          <div class="img">
-            <img
-              src="https://cdn.discordapp.com/attachments/731132582955057224/762119228789882900/shot_on_iphone.mp4" />
-          </div>
-          <p>Shot on iphone</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119257055035442/weeb_hentai.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119257055035442/weeb_hentai.mp4
-            " />
-          </div>
-          <p>weeb_hentai</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762119267726393404/sing.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762119267726393404/sing.mp4
-            " />
-          </div>
-          <p>sing</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762300346797916160/2abd085d8c4844be9e0e332ab8b2e522.mp4')">
-          <div class="img">
-            <img src="https://cdn.discordapp.com/attachments/731132582955057224/762300346797916160/2abd085d8c4844be9e0e332ab8b2e522.mp4
-            " />
-          </div>
-          <p>Study</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="img-row"
-          onclick="play('https://cdn.discordapp.com/attachments/731132582955057224/762300346797916160/2abd085d8c4844be9e0e332ab8b2e522.mp4')">
-          <div class="img">
-            <img
-              src="https://cdn.discordapp.com/attachments/731132582955057224/762300346797916160/2abd085d8c4844be9e0e332ab8b2e522.mp4" />
-          </div>
-          <p>Don t eat bread</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="video-player" id="videoPlayer">
+<div class="container">
+<ul id="vidlist"></ul>
+</div>
+<div class="video-player" id="videoPlayer">
     <video width="100%" controls autoplay id="myVideo">
-      <source src="" type="video/mp4" />
+    <source src="" type="video/mp4" />
     </video>
     <img src="https://cdn.glitch.com/496d22d6-564c-4e5c-aa65-ef8eb57a7833%2Fclose.png?v=1601988140121" class="close"
-      onclick="stop()" />
-  </div>
+    onclick="stop()" />
+</div>
 
-  <script>
+<script>
     var videoPlayer = document.getElementById("videoPlayer");
     var myVideo = document.getElementById("myVideo");
 
     function stop() {
-      myVideo.pause();
-      videoPlayer.style.display = "none";
+    myVideo.pause();
+    videoPlayer.style.display = "none";
     }
 
     function play(file) {
-      myVideo.src = file;
-      myVideo.play();
-      videoPlayer.style.display = "block";
+    myVideo.src = file;
+    myVideo.play();
+    videoPlayer.style.display = "block";
     }
-  </script>
+</script>
+<script>
+    const request_URL =
+    "https://raw.githubusercontent.com/SuhasDissa/DesertIsland/master/videos/videos.json";
+    const videoList = document.getElementById("vidlist");
+    //Start the fetching request with request_URL
+    fetch(request_URL)
+    .then(data => {
+        return data.json(); //Returning the data blob to the fetch request so we can extract the JSON from it.
+    })
+    .then(posts => {
+        posts.links.forEach(post => {
+        //Defining 'PostObject'
+        let postObject = {
+            vidlink: post.link,
+            vidtitle: post.title
+        };
 
+            var video = '<li onclick="play(\'' + postObject.vidlink + '\')"><p>'+postObject.vidtitle+'</p></li>';
+            videoList.innerHTML += video;
+
+        });
+    });
+</script>
 </body>
 
 </html>
