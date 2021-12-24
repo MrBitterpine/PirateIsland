@@ -1,5 +1,8 @@
+body{
+    margin:0px;
+}
 ul.meme {
-  margin: 3px 0;
+  margin: 0px;
   padding: 0;
   width: 100%;
   list-style: none;
@@ -23,7 +26,7 @@ li.meme {
 }
 
 img.meme {
-  width: 300px;
+  width: 90%;
   object-fit: cover;
   border-color: #2600b5;
   border-style: solid;
