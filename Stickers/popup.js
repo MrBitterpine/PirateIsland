@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!fetched) {
       goFetch();
     }
-
   });
   document.getElementById('myInput').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -16,6 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var namelist = [];
 var urllist = [];
+async function download(imageSrc) {
+  const image = await fetch(imageSrc)
+  const imageBlog = await image.blob()
+  const imageURL = URL.createObjectURL(imageBlog)
+
+  const link = document.createElement('a')
+  link.href = imageURL
+  link.download = 'image file name here'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
 function goFetch() {
   loader = document.getElementById("loader");
   defaultStuff = document.getElementById("premade");
@@ -55,7 +66,7 @@ function sorter() {
   for (i = 0; i < namelist.length; i++) {
     txtValue = namelist[i];
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      var image = '<li><a href="'+ urllist[i] +'"><img src="' + urllist[i] + '"></a></li>';
+      var image = '<li><a href="'+ urllist[i] +'"><img src="' + urllist[i] + '" onclick="download(this.src)"></a></li>';
       ul.innerHTML += image;
     } else {
     }

@@ -8,7 +8,16 @@ ul.meme {
   row-gap: 10px;
   column-gap: 10px;
 }
-
+@media screen and (max-width: 600px) {
+ul.meme {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 400px) {
+ul.meme {
+    grid-template-columns: repeat(1, 1fr);
+    }
+}
 li.meme {
   position: relative;
 }
