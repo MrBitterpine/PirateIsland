@@ -22,7 +22,7 @@ async function download(imageSrc) {
 
   const link = document.createElement('a')
   link.href = imageURL
-  link.download = 'image file name here'
+  link.download = 'sticker'
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
