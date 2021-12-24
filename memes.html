@@ -29,16 +29,44 @@
   <ul class="meme" id="memeul"></ul>
   </div>
   <script>
-    const request_URL =
-      "https://www.reddit.com/r/tkasylum/top/.json?sort=top&t=week&limit=100";
+    const kota_URL =
+      "https://www.reddit.com/r/tkasylum/top/.json?sort=top&t=week&limit=50";
+    const Maniya_URL =
+      "https://www.reddit.com/r/piefm/top/.json?sort=top&t=week&limit=50";
     const imageList = document.getElementById("memeul");
     //Start the fetching request with request_URL
-    fetch(request_URL)
+    fetch(kota_URL)
       .then(data => {
         return data.json(); //Returning the data blob to the fetch request so we can extract the JSON from it.
       })
       .then(posts => {
         hideLoader();
+        posts.data.children.forEach(post => {
+          //Defining 'PostObject'
+          let postObject = {
+            imgurl: post.data.url
+          };
+
+          //Adding a new element to the UL html element.
+          //imageList.innerHTML += addNewImage(postObject);
+
+          if (
+            postObject.imgurl.endsWith("png") ||
+            postObject.imgurl.endsWith("jpg") ||
+            postObject.imgurl.endsWith("jpeg") ||
+            postObject.imgurl.endsWith("webp")
+          ) {
+            var image = '<li class="meme"><img class="meme" src="' + postObject.imgurl + '"></li>';
+            imageList.innerHTML += image;
+          }
+
+        });
+      });
+       fetch(Maniya_URL)
+      .then(data => {
+        return data.json(); //Returning the data blob to the fetch request so we can extract the JSON from it.
+      })
+      .then(posts => {
         posts.data.children.forEach(post => {
           //Defining 'PostObject'
           let postObject = {
