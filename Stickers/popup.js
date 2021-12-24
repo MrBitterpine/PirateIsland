@@ -31,7 +31,7 @@ function goFetch() {
   loader = document.getElementById("loader");
   defaultStuff = document.getElementById("premade");
   loader.style.display = "block";
-  const request_URL = "http://emoji.gg/api/";
+  const request_URL = "https://emoji.gg/api/";
   //const imageList = document.getElementById("new");
   //Start the fetching request with request_URL
   fetch(request_URL)
