@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Desert Island Movies</title>
+</head>
+
+
+<body>
+    <input type="text" id="search">
+    <button type="button" onclick="Search()">Search</button>
+    <table id="result">
+        <tr>
+            <th>Movie</th>
+            <th>Link</th>
+          </tr>
+    </table>
+<style>
+#result {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#result td, #result th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#result tr:nth-child(even){background-color: #b5a8ff;}
+
+#result tr:hover {background-color: rgb(205, 204, 255);}
+
+#result th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #a49aff;
+  color: white;
+}
+a:link, a:visited {
+  background-color: #7abfff;
+  color: white;
+  font-size: large;
+  border-radius: 8px;
+  border-color: none;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button {
+    font-size: large;
+  background-color: #7abfff;
+  color: white;
+  border-color: none;
+  border-radius: 8px;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active {
+  background-color: #99cdfd;
+}
+
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 80%;
+}
+</style>
+<script>
+        function Search() {
+            let data = document.getElementById("search").value;
+            const kota_URL =
+                "https://torrents-api.ryukme.repl.co/api/1337x/" + encodeURIComponent(data) + "/1";
+            const table = document.getElementById("result");
+            //Start the fetching request with request_URL
+            fetch(kota_URL)
+                .then(data => {
+                    return data.json(); //Returning the data blob to the fetch request so we can extract the JSON from it.
+                })
+                .then(posts => {
+                    posts.forEach(post => {
+                        //Defining 'PostObject'
+                        let postObject = {
+                            name: post.Name,
+                            magnet: post.Magnet
+                        };
+                        var tr = '<tr><td>' + postObject.name + '</td><td><a href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>';
+                        table.innerHTML += tr;
+
+                    });
+                });
+        }
+    </script>
+</body>
+
+</html>
