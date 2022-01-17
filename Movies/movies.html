@@ -6,10 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Desert Island Movies</title>
+    <style>
+    .parallax {
+      /* The image used */
+      background-image: url('../images/background3.jpg');
+
+      /* Full height */
+      /*height: 100%;*/
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
 </head>
 
 
-<body>
+<body class="parallax">
     <input type="text" id="search">
     <button type="button" onclick="Search()">Search</button>
     <table id="result">

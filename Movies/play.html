@@ -4,12 +4,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Desert Island Movies</title>
+        <style>
+    .parallax {
+      /* The image used */
+      background-image: url('background.jpeg');
+
+      /* Full height */
+      /*height: 100%;*/
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
     </head>
     
     
-    <body>
+    <body class="parallax">
     <div style="text-align: center;width: 100%;">
-        <video style="width: 80%" id="video" controls></video>
+        <video width="1000px" features="download" id="video" controls></video>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js" charset="utf-8" async></script>
