@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+  <script src="matter.js" type="text/javascript"></script>
+<script src="matter-dropdown.js" type="text/javascript"></script>
   <style>
   .coolfont {font-family: "Bungee", sans-serif}
     .caption {
@@ -57,12 +59,66 @@
 </head>
 
 <body class="parallax w3-content" style="background-color:transparent;max-width:1600px;">
-
+<canvas id="matter-canvas"></canvas>
+<style>
+    body {
+        position: relative;
+    }
+    #matter-canvas {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: 100000;
+        pointer-events: none;
+    }
+    body.debug #matter-canvas {
+        display: block;
+    }
+    .matter {
+        z-index: 90000;
+    }
+</style>
+<script>
+    window.addEventListener('load', function() {
+        var dropdown = MatterDropdown({
+            //bounceDebounce: 50,               // how often are bounce-mouse interactions done? in ms
+            //timeToInteraction: 3000,          // how long until we can interact after creating the first interactive object with dropdown.addElement(el)?
+           // mouseBounceForce: {x: 0, y: -1} // for applyForce() when mouse touches non-static object. lower y = bouncier
+        });
+        dropdown.init();
+    });
+</script>
 <!-- Header with image -->
+<img src="viking.png" class="matter" style="height:200px; position:absolute; right: 50%;">
+<img src="shell.png" class="matter" style="height:50px; position:absolute; right: 60%;">
+<img src="shell1.png" class="matter" style="height:50px; position:absolute; right: 62%;">
+<img src="shell2.png" class="matter" style="height:50px; position:absolute; right: 64%;">
+<img src="shell3.png" class="matter" style="height:50px; position:absolute; right: 65%;">
+<img src="shell.png" class="matter" style="height:50px; position:absolute; right: 60%;">
+<img src="shell1.png" class="matter" style="height:50px; position:absolute; right: 62%;">
+<img src="shell2.png" class="matter" style="height:50px; position:absolute; right: 64%;">
+<img src="shell3.png" class="matter" style="height:50px; position:absolute; right: 65%;">
+<img src="anchor.png" class="matter" style="height:50px; position:absolute; right: 67%;">
+<img src="crab.png" class="matter" style="height:50px; position:absolute; right: 68%;">
+<img src="crab.png" class="matter" style="height:50px; position:absolute; right: 68%;">
+<img src="coconut.png" class="matter" style="height:50px; position:absolute; right: 68%;">
+<img src="crab.png" class="matter" style="height:50px; position:absolute; right: 68%;">
+<img src="coconut.png" class="matter" style="height:50px; position:absolute; right: 68%;">
+<img src="crab.png" class="matter" style="height:50px; position:absolute; right: 68%;">
+<img src="coconut.png" class="matter" style="height:50px; position:absolute; right: 68%;">
+
+
+
 <div class="w3-display-container" style="height:100%">
   <div class="w3-display-middle w3-center">
-    <span class="w3-text-white w3-hide-small coolfont" style="font-size:100px">Desert Island</span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium coolfont" style="font-size:60px">Desert Island</span>
+    <span class="w3-text-white w3-hide-small coolfont matter-static" style="font-size:100px">Desert Island</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium coolfont matter-static" style="font-size:60px">Desert Island</span>
   </div>
 </div>
   <!-- !PAGE CONTENT! -->
@@ -72,7 +128,7 @@
 
 
       <a href="memes.html">
-        <div class="w3-third w3-container w3-margin-bottom" > <img src="images/meme.jpeg" alt="Memes" style="border-radius: 20px;width:100%">
+        <div class="w3-third w3-container w3-margin-bottom matter-static" > <img src="images/meme.jpeg" alt="Memes" style="border-radius: 20px;width:100%">
           <div class="w3-container w3-white" style="border-radius: 20px;">
             <p><b>Memes<br>
               </b></p>
@@ -81,7 +137,7 @@
         </div>
       </a>
       <a href="covid.html">
-        <div class="w3-third w3-container w3-margin-bottom"> <img src="images/covid.jpeg" alt="Covid" style="border-radius: 20px;width:100%">
+        <div class="w3-third w3-container w3-margin-bottom matter-static"> <img src="images/covid.jpeg" alt="Covid" style="border-radius: 20px;width:100%">
           <div class="w3-container w3-white" style="border-radius: 20px;">
             <p><b>Corona Update<br>
               </b></p>
@@ -90,7 +146,7 @@
         </div>
       </a>
       <a href="funny_videos.html">
-        <div class="w3-third w3-container"> <img src="images/cool.jpeg" alt="Cool videos" style="border-radius: 20px;width:100%">
+        <div class="w3-third w3-container matter-static"> <img src="images/cool.jpeg" alt="Cool videos" style="border-radius: 20px;width:100%">
           <div class="w3-container w3-white" style="border-radius: 20px;">
             <p><b>Funny Videos</b></p>
             <p>Random cool videos</p>
@@ -103,7 +159,7 @@
 
 
       <a href="Stickers/stickers.html">
-        <div class="w3-third w3-container w3-margin-bottom" > <img src="images/download.jpeg" alt="Stickers" style="border-radius: 20px;width:100%">
+        <div class="w3-third w3-container w3-margin-bottom matter-static" > <img src="images/download.jpeg" alt="Stickers" style="border-radius: 20px;width:100%">
           <div class="w3-container w3-white" style="border-radius: 20px;">
             <p><b>Sticker Download<br>
               </b></p>
