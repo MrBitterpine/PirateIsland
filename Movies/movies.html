@@ -30,6 +30,8 @@
     <table id="result">
         <tr>
             <th>Movie</th>
+            <th>Peers</th>
+            <th>Size</th>
             <th>Link</th>
           </tr>
     </table>
@@ -45,7 +47,7 @@
   padding: 8px;
 }
 
-#result tr:nth-child(even){background-color: #b5a8ff;}
+#result tr{background-color: #b5a8ff;}
 
 #result tr:hover {background-color: rgb(205, 204, 255);}
 
@@ -116,9 +118,11 @@ input[type=text]:focus {
                         //Defining 'PostObject'
                         let postObject = {
                             name: post.Name,
-                            magnet: post.Magnet
+                            magnet: post.Magnet,
+                            size: post.Size,
+                            seeders: post.Seeders
                         };
-                        var tr = '<tr><td>' + postObject.name + '</td><td><a href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>';
+                        var tr = '<tr><td>' + postObject.name + '</td><td>' + postObject.seeders + '</td><td>' + postObject.size + '</td><td><a href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>';
                         table.innerHTML += tr;
 
                     });
