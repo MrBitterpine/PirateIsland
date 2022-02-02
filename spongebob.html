@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Funny Videos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container{
+width: 80%;
+margin: 80px auto;
+}
+.parallax {
+    /* The image used */
+    background-image: url('images/background3.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+p{font-family: Arial, Helvetica, sans-serif;
+margin-left: 20px;
+color:#000000;
+line-height: 22px;
+font-size: 20px;}
+ul{
+
+
+list-style: none;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+row-gap: 30px;
+column-gap: 40px;}
+li{
+padding: 0px 0px;
+background-color: ghostwhite;
+border-radius: 20px;
+overflow: hidden;
+cursor: pointer;}
+.video-player{
+/*width: 80%;*/
+height: 80%;
+position: fixed;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+display: none;
+overflow: hidden;
+}
+video:focus{
+outline: none;
+}
+
+.close{
+position: absolute;
+top: 10px;
+right: 10px;
+width: 30px;
+cursor: pointer;
+}
+</style>
+</head>
+
+<body class="parallax">
+<div class="container">
+<ul id="vidlist"></ul>
+</div>
+<div class="video-player" id="videoPlayer">
+    <video width="100%" controls autoplay id="myVideo">
+    <source src="" type="video/mp4" />
+    </video>
+    <img src="https://cdn.glitch.com/496d22d6-564c-4e5c-aa65-ef8eb57a7833%2Fclose.png?v=1601988140121" class="close"
+    onclick="stop()" />
+</div>
+
+<script>
+    var videoPlayer = document.getElementById("videoPlayer");
+    var myVideo = document.getElementById("myVideo");
+
+    function stop() {
+    myVideo.pause();
+    videoPlayer.style.display = "none";
+    }
+
+    function play(file) {
+    myVideo.src = file;
+    myVideo.play();
+    videoPlayer.style.display = "block";
+    }
+</script>
+<script>
+    const request_URL =
+    "https://raw.githubusercontent.com/SuhasDissa/DesertIsland/master/videos/spongebob.json";
+    const videoList = document.getElementById("vidlist");
+    //Start the fetching request with request_URL
+    fetch(request_URL)
+    .then(data => {
+        return data.json(); //Returning the data blob to the fetch request so we can extract the JSON from it.
+    })
+    .then(posts => {
+        posts.links.forEach(post => {
+        //Defining 'PostObject'
+        let postObject = {
+            vidlink: post.link,
+            vidtitle: post.title
+        };
+
+            var video = '<li onclick="play(\'' + postObject.vidlink + '\')"><p>'+postObject.vidtitle+'</p></li>';
+            videoList.innerHTML += video;
+
+        });
+    });
+</script>
+</body>
+
+</html>
