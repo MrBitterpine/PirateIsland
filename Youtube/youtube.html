@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title>Desert Island Movies</title>
+  <title>Youtube Downloader</title>
   <style>
     .parallax {
       /* The image used */
@@ -101,13 +101,13 @@
 
 <body class="parallax">
   <div id="loader"></div>
-  <input type="text" id="search">
+  <input type="text" id="search" placeholder="Paste a Youtube Link here">
   <button type="button" onclick="Search()" id="button">Search</button>
   <table id="result">
     <tr>
-      <th>Movie</th>
-      <th>Peers</th>
-      <th>Size</th>
+      <th>Resolution</th>
+      <th>Container</th>
+      <th>Quality</th>
       <th>Link</th>
     </tr>
   </table>
@@ -184,35 +184,42 @@
     }
   </style>
   <script>
+  function matchYoutubeUrl(url){
+var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+ return (url.match(p)) ? RegExp.$1 : false ;
+}
     function Search() {
-      document.getElementById("loader").style.display = "block";
       let data = document.getElementById("search").value;
       document.getElementById("button").style.display = "none"
-      const kota_URL =
-        "https://torrents-api.ryukme.repl.co/api/1337x/" + encodeURIComponent(data) + "/1";
+      if(matchYoutubeUrl(data) != false){
+      document.getElementById("loader").style.display = "block";
+      const URL =
+        "https://vid.puffyan.us/api/v1/videos/"+matchYoutubeUrl(data)+"?fields=formatStreams";
       const table = document.getElementById("result");
       //Start the fetching request with request_URL
-      fetch(kota_URL)
+      fetch(URL)
         .then(data => {
           return data.json(); //Returning the data blob to the fetch request so we can extract the JSON from it.
         })
         .then(posts => {
           document.getElementById("loader").style.display = "none";
-          posts.forEach(post => {
+          posts.formatStreams.forEach(post => {
             //Defining 'PostObject'
             let postObject = {
-              name: post.Name,
-              magnet: post.Magnet,
-              size: post.Size,
-              seeders: post.Seeders
+              res: post.size,
+              container: post.container,
+              quality: post.qualityLabel,
+              link: post.url
             };
-            var tr = '<tr><td>' + postObject.name + '</td><td>' + postObject.seeders + '</td><td>' + postObject.size + '</td><td><a href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>';
+            var tr = '<tr><td>' + postObject.res + '</td><td>' + postObject.container + '</td><td>' + postObject.quality + '</td><td><a href='+postObject.link+'>Play</a></td></tr>';
             table.innerHTML += tr;
 
           });
           document.getElementById("result").style.display = "block";
         });
-
+}else{
+alert("Url is Invalid");
+}
 
     }
   </script>
