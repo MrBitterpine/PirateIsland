@@ -103,6 +103,10 @@
   <div id="loader"></div>
   <input type="text" id="search" placeholder="Paste a Youtube Link here">
   <button type="button" onclick="Search()" id="button">Search</button>
+  <br><br>
+  <h1 style="color:Cornsilk;" id="title"></h1>
+  <br>
+  <br>
   <table id="result">
     <tr>
       <th>Resolution</th>
@@ -194,7 +198,7 @@ var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|
       if(matchYoutubeUrl(data) != false){
       document.getElementById("loader").style.display = "block";
       const URL =
-        "https://vid.puffyan.us/api/v1/videos/"+matchYoutubeUrl(data)+"?fields=formatStreams";
+        "https://vid.puffyan.us/api/v1/videos/"+matchYoutubeUrl(data)+"?fields=formatStreams,title";
       const table = document.getElementById("result");
       //Start the fetching request with request_URL
       fetch(URL)
@@ -202,6 +206,7 @@ var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|
           return data.json(); //Returning the data blob to the fetch request so we can extract the JSON from it.
         })
         .then(posts => {
+         document.getElementById("title").innerHTML=posts.title;
           document.getElementById("loader").style.display = "none";
           posts.formatStreams.forEach(post => {
             //Defining 'PostObject'
