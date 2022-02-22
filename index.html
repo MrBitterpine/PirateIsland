@@ -1,1 +1,143 @@
-<!DOCTYPE html> <html> <head> <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <title>DesertIsland</title> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee"> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa"> <style> body { font-family: "Comfortaa", sans-serif } .coolfont { font-family: "Bungee", sans-serif; color: white; font-size: 100px } .caption { position: absolute; left: 0; top: 50%; width: 100%; text-align: center; color: #000; } .caption span.border { background-color: transparent; opacity: 0.8; color: rgb(0, 0, 0); padding: 18px; letter-spacing: 10px; } body, html { height: 100%; } .parallax { background-image: url('images/background3.jpg'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; } a :hover { opacity: 0.85; } a ,a:link, a:visited,a:hover, a:active{ text-decoration: none; color: black; } .bgimg { background-repeat: no-repeat; background-size: cover; background-image: url("images/background3.jpg"); min-height: 90%; } body { margin: 0px; } ul { margin: 0px; padding: 10px; width: auto; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); row-gap: 10px; column-gap: 10px; } @media screen and (max-width: 400px) { ul { grid-template-columns: repeat(1, 1fr); } } li { position: relative; padding: 2% 10%; } div.mainpage { background-color: white; width: 100%; object-fit: cover; border-radius: 20px; } div.mainpage div { padding: 10px; } div.mainpage img { width: 100%; border-radius: 20px; } div.mainrow { width: 100%; } @media (max-width: 500px) { .coolfont { font-size: 60px } } .w3-display-middle { text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } </style> </head> <body class="parallax" style="background-color:transparent;max-width:1600px;"> <div class="w3-display-container" style="height:100%"> <div class="w3-display-middle"> <span class="coolfont">Desert Island</span> </div> </div> <div class="mainrow"> <ul id="menulist"> </ul> </div> <script> const data = '{ "menu": [{ "href": "memes_new.html", "title": "Memes", "description":"See latest Sinhala memes", "image":"images/meme.jpeg" },{ "href": "covid.html", "title": "Corona Update", "description":"Get Latest Updates About Covid", "image":"images/covid.jpeg" },{ "href": "funny_videos.html", "title": "Funny Videos", "description":"Random cool videos", "image":"images/cool.jpeg" },{ "href": "Stickers/stickers.html", "title": "Sticker Download", "description":"Download cool stickers", "image":"images/download.jpeg" },{ "href": "Movies/movies.html", "title": "Movies", "description":"Watch or download latest movies", "image":"images/movies.jpeg" },{ "href": "spongebob.html", "title": "Spongebob Cartoon", "description":"Watch Spongebob", "image":"images/sponge.jpeg" },{ "href": "Youtube/youtube.html", "title": "Youtube Video Download", "description":"Download Youtube Videos", "image":"images/youtube.jpeg" }] }'; var obj = JSON.parse(data); obj.menu.forEach(item => { var line = '<li><a href="' + item.href + '"><div class="mainpage"> <img src="' + item.image + '" alt="' + item.title + '"> <div> <p><b>' + item.title + '<br></b></p> <p>' + item.description + '</p> </div> </div> </a></li>'; document.getElementById("menulist").innerHTML += line; }); </script> </body> </html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>DesertIsland</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <style>
+        body {
+            font-family: "Comfortaa", sans-serif
+        }
+
+        .coolfont {
+            font-family: "Bungee", sans-serif;
+            color: white;
+            font-size: 100px
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+        .caption span.border {
+            background-color: transparent;
+            opacity: 0.8;
+            color: rgb(0, 0, 0);
+            padding: 18px;
+            letter-spacing: 10px;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .parallax {
+            background-image: url('images/background3.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        a :hover {
+            opacity: 0.85;
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+            color: black;
+        }
+
+        .bgimg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("images/background3.jpg");
+            min-height: 90%;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 10px;
+            width: auto;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+
+        @media screen and (max-width: 400px) {
+            ul {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        li {
+            position: relative;
+            padding: 2% 10%;
+        }
+
+        div.mainpage {
+            background-color: white;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        div.mainpage div {
+            padding: 10px;
+        }
+
+        div.mainpage img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        div.mainrow {
+            width: 100%;
+        }
+
+        @media (max-width: 500px) {
+            .coolfont {
+                font-size: 60px
+            }
+        }
+
+        .w3-display-middle {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body class="parallax" style="background-color:transparent;max-width:1600px;">
+    <div class="w3-display-container" style="height:100%">
+        <div class="w3-display-middle"> <span class="coolfont">Desert Island</span> </div>
+    </div>
+    <div class="mainrow">
+        <ul id="menulist"> </ul>
+    </div>
+    <script> const data = '{ "menu": [{ "href": "memes_new.html", "title": "Memes", "description":"See latest Sinhala memes", "image":"images/meme.jpeg" },{ "href": "covid.html", "title": "Corona Update", "description":"Get Latest Updates About Covid", "image":"images/covid.jpeg" },{ "href": "funny_videos.html", "title": "Funny Videos", "description":"Random cool videos", "image":"images/cool.jpeg" },{ "href": "Stickers/stickers.html", "title": "Sticker Download", "description":"Download cool stickers", "image":"images/download.jpeg" },{ "href": "Movies/movies.html", "title": "Movies", "description":"Watch or download latest movies", "image":"images/movies.jpeg" },{ "href": "spongebob.html", "title": "Spongebob Cartoon", "description":"Watch Spongebob", "image":"images/sponge.jpeg" },{ "href": "youtube.html", "title": "Youtube Video Download", "description":"Download Youtube Videos", "image":"images/youtube.jpeg" },{ "href": "wallpapers.html", "title": "Wallpapers Download", "description":"Download Desktop/Mobile wallpapers", "image":"https://picsum.photos/632/474" }] }'; var obj = JSON.parse(data); obj.menu.forEach(item => { var line = '<li><a href="' + item.href + '"><div class="mainpage"> <img src="' + item.image + '" alt="' + item.title + '"> <div> <p><b>' + item.title + '<br></b></p> <p>' + item.description + '</p> </div> </div> </a></li>'; document.getElementById("menulist").innerHTML += line; }); </script>
+</body>
+
+</html>

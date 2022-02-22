@@ -1,1 +1,25 @@
-<!doctype html> <html> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <title>Desert Island Movies</title> <style> .parallax { background-image: url('background.jpeg'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; } </style> </head> <body class="parallax"> <div style="text-align: center;width: 100%;"> <video width="1000px" id="video" controls></video> </div> <script src="https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js" charset="utf-8" async></script> <script> data = location.toString().split('?torrent='); if (typeof data[1] !== 'undefined') { document.getElementById('video').src = decodeURIComponent( data[1]); } </script> </body> </html>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Desert Island Movies</title>
+    <style>
+        .parallax {
+            background-image: url('background.jpeg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="parallax">
+    <div style="text-align: center;width: 100%;"> <video width="1000px" id="video" controls></video> </div>
+    <script src="https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js" charset="utf-8" async></script>
+    <script> data = location.toString().split('?torrent='); if (typeof data[1] !== 'undefined') { document.getElementById('video').src = decodeURIComponent(data[1]); } </script>
+</body>
+
+</html>
