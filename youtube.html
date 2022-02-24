@@ -13,7 +13,7 @@
         }
 
         .parallax {
-            background-image: url('../images/background3.jpg');
+            background-image: url('images/background3.jpg');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -179,7 +179,23 @@
             width: 80%;
         }
     </style>
-    <script> function matchYoutubeUrl(url) { var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/; return (url.match(p)) ? RegExp.$1 : false; } function Search() { let data = document.getElementById("search").value; document.getElementById("button").style.display = "none" ;if (matchYoutubeUrl(data) != false) { document.getElementById("loader").style.display = "block"; const URL = "https://vid.puffyan.us/api/v1/videos/" + matchYoutubeUrl(data) + "?fields=formatStreams,title"; const table = document.getElementById("result"); fetch(URL).then(data => { return data.json(); }).then(posts => { document.getElementById("title").innerHTML = posts.title; document.getElementById("loader").style.display = "none"; posts.formatStreams.forEach(post => { let postObject = { res: post.size, container: post.container, quality: post.qualityLabel, link: post.url }; var tr = '<tr><td>' + postObject.res + '</td><td>' + postObject.container + '</td><td>' + postObject.quality + '</td><td><a href=' + postObject.link + '>Play</a></td></tr>'; table.innerHTML += tr; }); document.getElementById("result").style.display = "block"; }); } else { alert("Url is Invalid"); } } </script>
+    <script> function matchYoutubeUrl(url) { var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+return (url.match(p)) ? RegExp.$1 : false;
+} function Search() { let data = document.getElementById("search").value;
+document.getElementById("button").style.display = "none" ;if (matchYoutubeUrl(data) != false) { document.getElementById("loader").style.display = "block";
+const URL = "https://vid.puffyan.us/api/v1/videos/" + matchYoutubeUrl(data) + "?fields=formatStreams,title";
+const table = document.getElementById("result");
+fetch(URL).then(data => { return data.json();
+}).then(posts => { document.getElementById("title").innerHTML = posts.title;
+document.getElementById("loader").style.display = "none";
+posts.formatStreams.forEach(post => { let postObject = { res: post.size, container: post.container, quality: post.qualityLabel, link: post.url };
+var tr = '<tr><td>' + postObject.res + '</td><td>' + postObject.container + '</td><td>' + postObject.quality + '</td><td><a href=' + postObject.link + '>Play</a></td></tr>';
+table.innerHTML += tr;
+});
+document.getElementById("result").style.display = "block";
+});
+} else { alert("Url is Invalid");
+} } </script>
 </body>
 
 </html>
