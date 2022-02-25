@@ -1,0 +1,139 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#result {
+    display: block;
+    text-align: center;
+}
+
+#audio {
+    width: 100%;
+}
+
+#player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 60px 100px 100px rgb(0 0 0);
+    background-color: #f1f3f4;
+    height: 30%;
+    width: 95%;
+    position: fixed;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+    flex-wrap: nowrap;
+    padding: 15px;
+}
+
+#player div {
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+#playerdiv {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#thumb {
+    display: inline-block;
+    border-radius: 10px;
+}
+
+#result {
+    border-width: 0;
+    width: 100%;
+}
+
+#result td,
+#result th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#result tr {
+    background-color: transparent;
+}
+
+#result th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+button {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
+    font-size: large;
+    background-color: #7abfff;
+    color: white;
+    border-width: 0;
+    border-radius: 20px;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #b0d9ff;
+}
+
+input[type=text] {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
+    width: auto;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    width: 80%;
+}
+
+#tablediv {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
+    background-color: white;
+    border-radius: 50px;
+    padding: 20px;
+    display: none;
+}
+.tablepadding{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width:100%
+}
+a:link,
+        a:visited {
+            background-color: #7abfff;
+            color: white;
+            font-size: large;
+            border-radius: 8px;
+            border-color: none;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+a:hover,
+        a:active {
+            background-color: #99cdfd;
+        
+        }

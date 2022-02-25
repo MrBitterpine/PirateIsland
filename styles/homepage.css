@@ -1,0 +1,107 @@
+
+body,
+html {
+    height: 100%;
+}
+        .coolfont {
+            font-family: "Bungee", sans-serif;
+            color: white;
+            font-size: 100px;
+            text-shadow: 0px 11px 20px #000,0px 9px 100px #000;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+        .caption span.border {
+            background-color: transparent;
+            opacity: 0.8;
+            color: rgb(0, 0, 0);
+            padding: 18px;
+            letter-spacing: 10px;
+        }
+        a :hover {
+            opacity: 0.85;
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+            color: black;
+        }
+
+        .bgimg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("../images/background3.jpg");
+            min-height: 90%;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 10px;
+            width: auto;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+
+        @media screen and (max-width: 400px) {
+            ul {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        li {
+            position: relative;
+            padding: 2% 10%;
+        }
+
+        div.mainpage {
+            background-color: white;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        div.mainpage div {
+            padding: 10px;
+        }
+
+        div.mainpage img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        div.mainrow {
+            width: 100%;
+        }
+
+        @media (max-width: 500px) {
+            .coolfont {
+                font-size: 60px
+            }
+        }
+
+        .w3-display-middle {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }

@@ -6,228 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-    <title>Youtube Downloader</title>
-    <style>
-        body {
-            font-family: "Comfortaa", sans-serif
-        }
-
-        .parallax {
-            background-image: url('images/background3.jpg');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #loader {
-            display: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            z-index: 1;
-            width: 120px;
-            height: 120px;
-            margin: -76px 0 0 -76px;
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #3498db;
-            -webkit-animation: spin 2s linear infinite;
-            animation: spin 2s linear infinite;
-        }
-
-        @-webkit-keyframes spin {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .animate-bottom {
-            position: relative;
-            -webkit-animation-name: animatebottom;
-            -webkit-animation-duration: 1s;
-            animation-name: animatebottom;
-            animation-duration: 1s
-        }
-
-        @-webkit-keyframes animatebottom {
-            from {
-                bottom: -100px;
-                opacity: 0
-            }
-
-            to {
-                bottom: 0px;
-                opacity: 1
-            }
-        }
-
-        @keyframes animatebottom {
-            from {
-                bottom: -100px;
-                opacity: 0
-            }
-
-            to {
-                bottom: 0;
-                opacity: 1
-            }
-        }
-
-        #result {
-            display: block;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Music Player</title>
 </head>
 
-<body class="parallax">
-    <div id="loader"></div>
-    <div style="display: flex;justify-content: center; align-items: center;"><input type="text" id="search" placeholder="Search Songs"> <button type="button"
-        onclick="Search()" id="button">Search</button></div> <br>
-    <br>
+<body >
+    <div id="loader">
+        <div></div>
+    </div>
     <div style="display: flex;justify-content: center; align-items: center;">
-    <div id="tablediv">
-    <table id="result">
-        <tr>
-            <th>Cover</th>
-            <th>Title</th>
-            <th>Download</th>
-        </tr>
-    </table>
-</div>
-</div>
-<div id="playerdiv">
-    <div id="player">
-        <img id="thumb" src="">
-        <div>
-            <h4 id="heading"></h4><audio id="audio" src="" controls autoplay></audio>
+        <input type="text" id="search"
+            placeholder="Search Songs"> <button type="button" onclick="Search()" id="button">Search</button></div> <br>
+    <br>
+    <div class="tablepadding">
+        <div id="tablediv">
+            <table id="result">
+                <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Download</th>
+                </tr>
+            </table>
         </div>
-</div>
+    </div>
+    <div id="playerdiv">
+        <div id="player">
+            <img id="thumb" src="">
+            <div>
+                <h4 id="heading"></h4><audio id="audio" src="" controls autoplay></audio>
+            </div>
+        </div>
         </audio>
     </div>
-    <style>
-    #audio{
-    width: 100%;}
-        #player {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 60px 100px 100px rgb(0 0 0);
-            background-color: #f1f3f4;
-            height: 30%;
-            width: 95%;
-            position: fixed;
-            bottom: 0;
-            border-radius: 20px 20px 0 0;
-            flex-wrap: nowrap;
-            padding: 15px;
-        }
-
-        #player div {
-            text-align: center;
-            padding: 20px;
-            height: 100%;
-            width:100%;
-            display: inline-block;
-        }
-        #playerdiv{
-        width: 100%;
-        display: none;
-        justify-content: center;
-            align-items: center;}
-
-        #thumb {
-            display: inline-block;
-            border-radius: 10px;
-        }
-
-        #result {
-            border-width: 0;
-            width: 100%;
-        }
-
-        #result td,
-        #result th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        #result tr {
-            background-color: transparent;
-        }
-
-        #result th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-        }
-
-        button {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
-            font-size: large;
-            background-color: #7abfff;
-            color: white;
-            border-width: 0;
-            border-radius: 20px;
-            padding: 14px 25px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-        }
-        button:hover {
-            cursor: pointer;
-            background-color: #b0d9ff;
-        }
-
-        input[type=text] {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
-            width: auto;
-            box-sizing: border-box;
-            border: 2px solid #ccc;
-            border-radius: 50px;
-            font-size: 16px;
-            background-color: white;
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            padding: 12px 20px 12px 40px;
-            width: 80%;
-        }
-        #tablediv{
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
-            background-color: white;
-            border-radius: 50px;
-            padding:20px;
-            display:none;
-        }
-    </style>
     <script>function Search() {
             let data = document.getElementById("search").value;
 
-            document.getElementById("loader").style.display = "block";
+            document.getElementById("loader").style.display = "flex";
             const URL = "https://vid.puffyan.us/api/v1/search?type=video&q=" + encodeURIComponent(data);
             const table = document.getElementById("result");
             fetch(URL).then(data => {
                 return data.json();
             }).then(posts => {
                 document.getElementById("loader").style.display = "none";
-                table.innerHTML ='<tr><th>Cover</th><th>Title</th><th>Download</th></tr>';
+                table.innerHTML = '<tr><th>Cover</th><th>Title</th><th>Download</th></tr>';
                 posts.forEach(post => {
                     var title = post.title;
                     var thumbnail = post.videoThumbnails[4].url;

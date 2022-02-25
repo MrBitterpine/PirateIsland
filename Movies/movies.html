@@ -6,179 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/table.css">
     <title>Desert Island Movies</title>
-    <style>
-        body {
-            font-family: "Comfortaa", sans-serif
-        }
-
-        .parallax {
-            background-image: url('../images/background3.jpg');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #loader {
-            display: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            z-index: 1;
-            width: 120px;
-            height: 120px;
-            margin: -76px 0 0 -76px;
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #3498db;
-            -webkit-animation: spin 2s linear infinite;
-            animation: spin 2s linear infinite;
-        }
-
-        @-webkit-keyframes spin {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .animate-bottom {
-            position: relative;
-            -webkit-animation-name: animatebottom;
-            -webkit-animation-duration: 1s;
-            animation-name: animatebottom;
-            animation-duration: 1s
-        }
-
-        @-webkit-keyframes animatebottom {
-            from {
-                bottom: -100px;
-                opacity: 0
-            }
-
-            to {
-                bottom: 0px;
-                opacity: 1
-            }
-        }
-
-        @keyframes animatebottom {
-            from {
-                bottom: -100px;
-                opacity: 0
-            }
-
-            to {
-                bottom: 0;
-                opacity: 1
-            }
-        }
-
-        #result {
-            display: none;
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body class="parallax">
-    <div id="loader"></div> <input type="text" id="search"> <button type="button" onclick="Search()"
-        id="button">Search</button>
-    <table id="result">
-        <tr>
-            <th>Movie</th>
-            <th>Peers</th>
-            <th>Size</th>
-            <th>Link</th>
-        </tr>
-    </table>
-    <style>
-        #result {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        #result td,
-        #result th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        #result tr {
-            background-color: #b5a8ff;
-        }
-
-        #result tr:hover {
-            background-color: rgb(205, 204, 255);
-        }
-
-        #result th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #a49aff;
-            color: white;
-        }
-
-        a:link,
-        a:visited {
-            background-color: #7abfff;
-            color: white;
-            font-size: large;
-            border-radius: 8px;
-            border-color: none;
-            padding: 14px 25px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        button {
-            font-size: large;
-            background-color: #7abfff;
-            color: white;
-            border-color: none;
-            border-radius: 8px;
-            padding: 14px 25px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        a:hover,
-        a:active {
-            background-color: #99cdfd;
-        }
-
-        input[type=text] {
-            width: 130px;
-            box-sizing: border-box;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            background-color: white;
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            padding: 12px 20px 12px 40px;
-            width: 80%;
-        }
-    </style>
-    <script> function Search() { document.getElementById("loader").style.display = "block"; let data = document.getElementById("search").value; document.getElementById("button").style.display = "none"; const kota_URL = "https://torrents-api.ryukme.repl.co/api/1337x/" + encodeURIComponent(data) + "/1"; const table = document.getElementById("result"); fetch(kota_URL).then(data => { return data.json(); }).then(posts => { document.getElementById("loader").style.display = "none"; posts.forEach(post => { let postObject = { name: post.Name, magnet: post.Magnet, size: post.Size, seeders: post.Seeders }; var tr = '<tr><td>' + postObject.name + '</td><td>' + postObject.seeders + '</td><td>' + postObject.size + '</td><td><a href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>'; table.innerHTML += tr; }); document.getElementById("result").style.display = "block"; }); } </script>
+    <div id="loader">
+        <div></div>
+    </div>
+    <div style="display: flex;justify-content: center; align-items: center;">
+        <input type="text" id="search" placeholder="Search Movie"> <button type="button" onclick="Search()"
+            id="button">Search</button>
+    </div> <br>
+    <br>
+    <div class="tablepadding">
+        <div id="tablediv">
+            <h1 id="title"></h1>
+            <table id="result">
+                <tr>
+                    <th>Movie</th>
+                    <th>Peers</th>
+                    <th>Size</th>
+                    <th>Link</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script> function Search() { document.getElementById("loader").style.display = "flex"; let data = document.getElementById("search").value; document.getElementById("button").style.display = "none"; const kota_URL = "https://torrents-api.ryukme.repl.co/api/1337x/" + encodeURIComponent(data) + "/1"; const table = document.getElementById("result"); fetch(kota_URL).then(data => { return data.json(); }).then(posts => { document.getElementById("loader").style.display = "none"; posts.forEach(post => { let postObject = { name: post.Name, magnet: post.Magnet, size: post.Size, seeders: post.Seeders }; var tr = '<tr><td>' + postObject.name + '</td><td>' + postObject.seeders + '</td><td>' + postObject.size + '</td><td><a href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>'; table.innerHTML += tr; }); document.getElementById("tablediv").style.display = "block"; }); } </script>
 </body>
 
 </html>
