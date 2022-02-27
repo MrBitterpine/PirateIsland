@@ -12,22 +12,32 @@
     <title>Music Player</title>
 </head>
 
-<body >
+<body>
     <div id="loader">
         <div></div>
     </div>
     <div style="display: flex;justify-content: center; align-items: center;">
-        <input type="text" id="search"
-            placeholder="Search Songs"> <button type="button" onclick="Search()" id="button">Search</button></div> <br>
+        <input type="text" id="search" placeholder="Search Songs"> <button type="button" onclick="Search()"
+            id="button">Search</button>
+    </div> <br>
     <br>
     <div class="tablepadding">
-        <div id="tablediv">
+        <div id="tablediv" style="display:flex">
             <table id="result">
+                <tr><th colspan="3" style="text-align:center;"><h2>Popular Songs</h2></th></tr>                
                 <tr>
                     <th>Cover</th>
                     <th>Title</th>
                     <th>Download</th>
                 </tr>
+                <tr>
+                    <td><img src="https://vid.puffyan.us/vi/8v2kCTSE6Gg/mqdefault.jpg"></td>
+                    <td>Gabry Ponte, LUM!X, Prezioso - Thunder (Lyrics) | down the river were drunk tiktok</td>
+                    <td><button
+                            onclick="Download('8v2kCTSE6Gg','https://vid.puffyan.us/vi/8v2kCTSE6Gg/mqdefault.jpg','Gabry Ponte, LUM!X, Prezioso - Thunder (Lyrics) | down the river were drunk tiktok')">Play</button>
+                    </td>
+                </tr>
+                <tr><td><img src="https://vid.puffyan.us/vi/uiqrngFTX5k/mqdefault.jpg"></td><td>Kacha Badam Song | Bhuban Badyakar | Kacha Badam Song Remix | Badam Badam Song | New Song 2022</td><td><button onclick="Download('uiqrngFTX5k','https://vid.puffyan.us/vi/uiqrngFTX5k/mqdefault.jpg','Kacha Badam Song | Bhuban Badyakar | Kacha Badam Song Remix | Badam Badam Song | New Song 2022')">Play</button></td></tr>
             </table>
         </div>
     </div>
@@ -59,7 +69,7 @@
                     var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><button onclick="Download(\'' + id + '\',\'' + thumbnail + '\',\'' + title + '\')">Play</a></td></tr>';
                     table.innerHTML += tr;
                 });
-                document.getElementById("tablediv").style.display = "block";
+                //document.getElementById("tablediv").style.display = "block";
             });
         }
 

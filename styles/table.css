@@ -62,9 +62,13 @@
     border: 1px solid #ddd;
     padding: 8px;
 }
+#result td img{
+    width: 100%;
+}
 
 #result tr {
     background-color: transparent;
+    font-size: large;
 }
 
 #result th {
@@ -137,3 +141,29 @@ a:hover,
             background-color: #99cdfd;
         
         }
+@media screen and (max-width: 700px) {
+    #thumb{
+        display: none;
+    }
+    #player {
+        height: 20%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #result tr {
+        font-size: small;
+    }
+    #result tr button{
+        font-size: small;
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    #result tr {
+        font-size:smaller;
+    }
+    #result tr button{
+        font-size: smaller;
+    }
+    
+}
