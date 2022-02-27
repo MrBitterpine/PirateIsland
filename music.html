@@ -24,20 +24,16 @@
     <div class="tablepadding">
         <div id="tablediv" style="display:flex">
             <table id="result">
-                <tr><th colspan="3" style="text-align:center;"><h2>Popular Songs</h2></th></tr>                
+                <tr>
+                    <th colspan="3" style="text-align:center;">
+                        <h2>Popular Songs</h2>
+                    </th>
+                </tr>
                 <tr>
                     <th>Cover</th>
                     <th>Title</th>
                     <th>Download</th>
                 </tr>
-                <tr>
-                    <td><img src="https://vid.puffyan.us/vi/8v2kCTSE6Gg/mqdefault.jpg"></td>
-                    <td>Gabry Ponte, LUM!X, Prezioso - Thunder (Lyrics) | down the river were drunk tiktok</td>
-                    <td><button
-                            onclick="Download('8v2kCTSE6Gg','https://vid.puffyan.us/vi/8v2kCTSE6Gg/mqdefault.jpg','Gabry Ponte, LUM!X, Prezioso - Thunder (Lyrics) | down the river were drunk tiktok')">Play</button>
-                    </td>
-                </tr>
-                <tr><td><img src="https://vid.puffyan.us/vi/uiqrngFTX5k/mqdefault.jpg"></td><td>Kacha Badam Song | Bhuban Badyakar | Kacha Badam Song Remix | Badam Badam Song | New Song 2022</td><td><button onclick="Download('uiqrngFTX5k','https://vid.puffyan.us/vi/uiqrngFTX5k/mqdefault.jpg','Kacha Badam Song | Bhuban Badyakar | Kacha Badam Song Remix | Badam Badam Song | New Song 2022')">Play</button></td></tr>
             </table>
         </div>
     </div>
@@ -50,12 +46,20 @@
         </div>
         </audio>
     </div>
-    <script>function Search() {
+    <script>
+        const table = document.getElementById("result");
+        fetch("https://desertisland.herokuapp.com/music").then(data => {
+            return data.json();
+        }).then(obj => {
+            obj.items.forEach(music => {
+                table.innerHTML += '<tr><td><img src="' + music.thumb + '"></td><td>' + music.title + '</td><td><button onclick="Download(\'' + music.id + '\',\'' + music.thumb + '\',\'' + music.title + '\')">Play</button></td></tr>'
+            });
+        });
+        function Search() {
             let data = document.getElementById("search").value;
 
             document.getElementById("loader").style.display = "flex";
             const URL = "https://vid.puffyan.us/api/v1/search?type=video&q=" + encodeURIComponent(data);
-            const table = document.getElementById("result");
             fetch(URL).then(data => {
                 return data.json();
             }).then(posts => {
@@ -84,6 +88,21 @@
                 document.getElementById("audio").src = audiourl;
                 document.getElementById("playerdiv").style.display = "flex";
             });
+            const postData = {
+                id: id,
+                title: title,
+                thumb: thumb
+            };
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(postData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            fetch("https://desertisland.herokuapp.com/music", options)
+                .then(res => res.json())
+                .then(res => console.log(res));
         } </script>
 </body>
 
