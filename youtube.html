@@ -42,7 +42,7 @@ const URL = "https://vid.puffyan.us/api/v1/videos/" + matchYoutubeUrl(data) + "?
 const table = document.getElementById("result");
 fetch(URL).then(data => { return data.json();
 }).then(posts => { document.getElementById("title").innerHTML = posts.title;
-document.getElementById("thumbnail").innerHTML = posts.videoThumbnails[5].url;
+document.getElementById("thumbnail").src = posts.videoThumbnails[4].url;
 document.getElementById("loader").style.display = "none";
 posts.formatStreams.forEach(post => { let postObject = { res: post.size, container: post.container, quality: post.qualityLabel, link: post.url};
 var tr = '<tr><td>' + postObject.res + '</td><td>' + postObject.container + '</td><td>' + postObject.quality + '</td><td><a href=' + postObject.link + '>Play</a></td></tr>';
