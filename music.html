@@ -49,9 +49,11 @@
     <script>
         const table = document.getElementById("result");
         fetch("https://desertisland.herokuapp.com/music").then(data => {
+            console.log(data);
             return data.json();
         }).then(obj => {
-            obj.items.forEach(music => {
+            console.log(obj);
+            obj.forEach(music => {
                 table.innerHTML += '<tr><td><img src="' + music.thumb + '"></td><td>' + music.title + '</td><td><button onclick="Download(\'' + music.id + '\',\'' + music.thumb + '\',\'' + music.title + '\')">Play</button></td></tr>'
             });
         });
