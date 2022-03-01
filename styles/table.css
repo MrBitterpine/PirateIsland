@@ -52,6 +52,10 @@
     border-radius: 10px;
 }
 
+#thumbnail{
+width:376px;
+border-radius: 20px;
+}
 #result {
     border: none;
     width: 100%;
@@ -95,6 +99,12 @@ button:hover {
     cursor: pointer;
     background-color: #b0d9ff;
 }
+#result tr button{
+        background-color: #6cfc76;
+    }
+#result tr button:hover{
+        background-color: #92fc99;
+    }
 
 input[type=text] {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
@@ -124,20 +134,22 @@ input[type=text] {
     width:100%
 }
 a:link,
-        a:visited {
-            background-color: #7abfff;
-            color: white;
-            font-size: large;
-            border-radius: 8px;
-            border-color: none;
-            padding: 14px 25px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
+a:visited {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
+    font-size: large;
+    background-color: #ff7a7a;
+    color: white;
+    border-width: 0;
+    border-radius: 20px;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
         }
 a:hover,
-        a:active {
-            background-color: #99cdfd;
+a:active {
+    cursor: pointer;
+    background-color: #ff9999;
         
         }
 @media screen and (max-width: 700px) {
@@ -155,6 +167,9 @@ a:hover,
     #result tr button{
         font-size: small;
     }
+    #result tr a{
+        font-size: small;
+    }
     
 }
 @media screen and (max-width: 500px) {
@@ -164,5 +179,7 @@ a:hover,
     #result tr button{
         font-size: smaller;
     }
-    
+    #result tr a{
+        font-size: smaller;
+    }
 }
