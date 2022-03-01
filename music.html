@@ -21,18 +21,8 @@
     </div> <br>
     <br>
     <div class="tablepadding">
-        <div id="tablediv" style="display:flex">
+        <div id="tablediv">
             <table id="result">
-                <tr>
-                    <th colspan="3" style="text-align:center;">
-                        <h2>Popular Songs</h2>
-                    </th>
-                </tr>
-                <tr>
-                    <th>Cover</th>
-                    <th>Title</th>
-                    <th>Download</th>
-                </tr>
             </table>
         </div>
     </div>
@@ -47,15 +37,6 @@
     </div>
     <script>
         const table = document.getElementById("result");
-        fetch("https://desertisland.herokuapp.com/music").then(data => {
-            console.log(data);
-            return data.json();
-        }).then(obj => {
-            console.log(obj);
-            obj.forEach(music => {
-                table.innerHTML += '<tr><td><img src="' + music.thumb + '"></td><td>' + music.title + '</td><td><button onclick="Download(\'' + music.id + '\',\'' + music.thumb + '\',\'' + music.title + '\')">Play</button></td></tr>'
-            });
-        });
         const input = document.getElementById("search");
         input.addEventListener("keyup", function(event) {
             if (event.keyCode === 13) {
@@ -96,21 +77,6 @@
                 document.getElementById("audio").src = audiourl;
                 document.getElementById("playerdiv").style.display = "flex";
             });
-            const postData = {
-                id: id,
-                title: title,
-                thumb: thumb
-            };
-            const options = {
-                method: 'POST',
-                body: JSON.stringify(postData),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }
-            fetch("https://desertisland.herokuapp.com/music", options)
-                .then(res => res.json())
-                .then(res => console.log(res));
         }
     </script>
 </body>
