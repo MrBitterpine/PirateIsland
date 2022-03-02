@@ -23,6 +23,11 @@
     align-items: center;
     box-shadow: 0px 60px 100px 100px rgb(0 0 0);
     background-color: #f1f3f4;
+    background-image: url('../images/player.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 30%;
     width: 95%;
     position: fixed;
@@ -52,10 +57,11 @@
     border-radius: 10px;
 }
 
-#thumbnail{
-width:376px;
-border-radius: 20px;
+#thumbnail {
+    width: 376px;
+    border-radius: 20px;
 }
+
 #result {
     border: none;
     width: 100%;
@@ -65,7 +71,8 @@ border-radius: 20px;
 #result th {
     padding: 8px;
 }
-#result td img{
+
+#result td img {
     width: 100%;
 }
 
@@ -99,12 +106,14 @@ button:hover {
     cursor: pointer;
     background-color: #b0d9ff;
 }
-#result tr button{
-        background-color: #6cfc76;
-    }
-#result tr button:hover{
-        background-color: #92fc99;
-    }
+
+#result tr button {
+    background-color: #6cfc76;
+}
+
+#result tr button:hover {
+    background-color: #92fc99;
+}
 
 input[type=text] {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
@@ -127,12 +136,14 @@ input[type=text] {
     padding: 20px;
     display: none;
 }
-.tablepadding{
+
+.tablepadding {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    width:100%
+    width: 100%
 }
+
 a:link,
 a:visited {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
@@ -145,41 +156,50 @@ a:visited {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-        }
+}
+
 a:hover,
 a:active {
     cursor: pointer;
     background-color: #ff9999;
-        
-        }
+
+}
+
 @media screen and (max-width: 700px) {
-    #thumb{
+    #thumb {
         display: none;
     }
+
     #player {
         height: 20%;
     }
 }
+
 @media screen and (max-width: 600px) {
     #result tr {
         font-size: small;
     }
-    #result tr button{
+
+    #result tr button {
         font-size: small;
     }
-    #result tr a{
+
+    #result tr a {
         font-size: small;
     }
-    
+
 }
+
 @media screen and (max-width: 500px) {
     #result tr {
-        font-size:smaller;
-    }
-    #result tr button{
         font-size: smaller;
     }
-    #result tr a{
+
+    #result tr button {
+        font-size: smaller;
+    }
+
+    #result tr a {
         font-size: smaller;
     }
 }

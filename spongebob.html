@@ -10,16 +10,48 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body >
+<body>
     <div class="container">
         <ul id="vidlist"></ul>
     </div>
-    <div class="video-player" id="videoPlayer"> <video width="100%" controls autoplay id="myVideo">
-            <source src="" type="video/mp4" />
-        </video> <img src="images/close.png"
-            class="close" onclick="stop()" /> </div>
-    <script> var videoPlayer = document.getElementById("videoPlayer"); var myVideo = document.getElementById("myVideo"); function stop() { myVideo.pause(); videoPlayer.style.display = "none"; } function play(file) { myVideo.src = file; myVideo.play(); videoPlayer.style.display = "block"; } </script>
-    <script> const request_URL = "https://raw.githubusercontent.com/SuhasDissa/DesertIsland/master/videos/spongebob.json"; const videoList = document.getElementById("vidlist"); fetch(request_URL).then(data => { return data.json(); }).then(posts => { posts.links.forEach(post => { let postObject = { vidlink: post.link, vidtitle: post.title }; var video = '<li onclick="play(\'' + postObject.vidlink + '\')"><p>' + postObject.vidtitle + '</p></li>'; videoList.innerHTML += video; }); }); </script>
+    <div class="videopadding" id="videopadding">
+        <div id="videoPlayer">
+            <img src="images/close.png" class="close" onclick="stop()" />
+            <video controls autoplay id="myVideo">
+            </video>
+        </div>
+    </div>
+    <script>
+        var videoPlayer = document.getElementById("videopadding");
+        var myVideo = document.getElementById("myVideo");
+
+        function stop() {
+            myVideo.pause();
+            videoPlayer.style.display = "none";
+        }
+
+        function play(file) {
+            myVideo.src = file;
+            myVideo.play();
+            videoPlayer.style.display = "flex";
+        }
+    </script>
+    <script>
+        const request_URL = "https://raw.githubusercontent.com/SuhasDissa/DesertIsland/master/videos/spongebob.json";
+        const videoList = document.getElementById("vidlist");
+        fetch(request_URL).then(data => {
+            return data.json();
+        }).then(posts => {
+            posts.links.forEach(post => {
+                let postObject = {
+                    vidlink: post.link,
+                    vidtitle: post.title
+                };
+                var video = '<li onclick="play(\'' + postObject.vidlink + '\')"><p>' + postObject.vidtitle + '</p></li>';
+                videoList.innerHTML += video;
+            });
+        });
+    </script>
 </body>
 
 </html>
