@@ -38,6 +38,15 @@
     <script>
         const table = document.getElementById("result");
         const input = document.getElementById("search");
+        if (localStorage.recentsongs) {
+            songlist = localStorage.recentsongs;
+            object = JSON.parse(songlist);
+            table.innerHTML = '<tr><th colspan="3" style="text-align:center;"><h2>Recent Songs</h2></th></tr><tr><th>Cover</th><th>Title</th><th>Download</th></tr>'
+            object.forEach(music => {
+                table.innerHTML += '<tr><td><img src="' + music.thumb + '"></td><td>' + music.title + '</td><td><button onclick="Play(\'' + music.id + '\',\'' + music.thumb + '\',\'' + music.title + '\')">Play</button><a href="youtube.html?id=' + music.id + '">Download</a></td></tr>'
+            });
+            document.getElementById("tablediv").style.display = "block";
+        }
         input.addEventListener("keyup", function(event) {
             if (event.keyCode === 13) {
                 event.preventDefault();
@@ -77,6 +86,24 @@
                 document.getElementById("audio").src = audiourl;
                 document.getElementById("playerdiv").style.display = "flex";
             });
+            if (localStorage.recentsongs) {
+                const lastsong = {
+                    id: id,
+                    title: title,
+                    thumb: thumb
+                };
+                songlist = JSON.parse(localStorage.recentsongs);
+                songlist.push(lastsong);
+                localStorage.recentsongs = JSON.stringify(songlist);
+
+            } else {
+                const newsong = [{
+                    id: id,
+                    title: title,
+                    thumb: thumb
+                }];
+                localStorage.recentsongs = JSON.stringify(newsong);
+            }
         }
     </script>
 </body>
