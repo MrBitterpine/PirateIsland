@@ -33,7 +33,7 @@
     </style>
 </head>
 
-<body > <noscript>
+<body> <noscript>
         <div class="warn w3-red">Pleees enable javascript </div>
     </noscript>
     <div class="w3-main">
@@ -128,7 +128,48 @@
             </div>
         </div>
     </div>
-    <script> const url = "https://corona.lmao.ninja/v3/covid-19/all"; const localurl = "https://hpb.health.gov.lk/api/get-current-statistical"; const totalLK = document.getElementById('totalLK'); const activeLK = document.getElementById('activeLK'); const newLK = document.getElementById('newLK'); const deathLK = document.getElementById('deathLK'); const totalW = document.getElementById('totalW'); const activeW = document.getElementById('activeW'); const newW = document.getElementById('newW'); const deathW = document.getElementById('deathW'); fetch(localurl).then(data => { return data.json(); }).then(covidlk => { let postObject = { total: covidlk.data.local_total_cases, rec: covidlk.data.local_recovered, act: covidlk.data.local_active_cases, death: covidlk.data.local_deaths, newCases: covidlk.data.local_new_cases, }; totalLK.innerHTML = postObject.total; activeLK.innerHTML = postObject.act; deathLK.innerHTML = postObject.death; newLK.innerHTML = postObject.newCases; }); fetch(url).then(data => { return data.json(); }).then(covid => { let postObject2 = { total: covid.cases, rec: covid.recovered, act: covid.active, death: covid.deaths, newCases: covid.todayCases }; totalW.innerHTML = postObject2.total; activeW.innerHTML = postObject2.act; deathW.innerHTML = postObject2.death; newW.innerHTML = postObject2.newCases; }); </script>
+    <script>
+        const url = "https://corona.lmao.ninja/v3/covid-19/all";
+        const localurl = "https://hpb.health.gov.lk/api/get-current-statistical";
+        const totalLK = document.getElementById('totalLK');
+        const activeLK = document.getElementById('activeLK');
+        const newLK = document.getElementById('newLK');
+        const deathLK = document.getElementById('deathLK');
+        const totalW = document.getElementById('totalW');
+        const activeW = document.getElementById('activeW');
+        const newW = document.getElementById('newW');
+        const deathW = document.getElementById('deathW');
+        fetch(localurl).then(data => {
+            return data.json();
+        }).then(covidlk => {
+            let postObject = {
+                total: covidlk.data.local_total_cases,
+                rec: covidlk.data.local_recovered,
+                act: covidlk.data.local_active_cases,
+                death: covidlk.data.local_deaths,
+                newCases: covidlk.data.local_new_cases,
+            };
+            totalLK.innerHTML = postObject.total;
+            activeLK.innerHTML = postObject.act;
+            deathLK.innerHTML = postObject.death;
+            newLK.innerHTML = postObject.newCases;
+        });
+        fetch(url).then(data => {
+            return data.json();
+        }).then(covid => {
+            let postObject2 = {
+                total: covid.cases,
+                rec: covid.recovered,
+                act: covid.active,
+                death: covid.deaths,
+                newCases: covid.todayCases
+            };
+            totalW.innerHTML = postObject2.total;
+            activeW.innerHTML = postObject2.act;
+            deathW.innerHTML = postObject2.death;
+            newW.innerHTML = postObject2.newCases;
+        });
+    </script>
 </body>
 
 </html>
