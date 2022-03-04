@@ -4,32 +4,38 @@
 <head>
     <title>Wallpapers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/meme.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        body {
-            font-family: "Comfortaa", sans-serif
-        }
-
-        .parallax {
-            background-image: url('images/background3.jpg');
-            height: 100%;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
 </head>
 
-<body >
+<body>
     <div class="loader" id="loader"></div>
     <div>
         <ul class="meme" style="grid-template-columns: repeat(2, 1fr);" id="memeul"></ul>
     </div>
-    <script>var URL = "https://www.reddit.com/r/wallpaper/top/.json?sort=top&t=today&limit=20"; const imageList = document.getElementById("memeul"); fetch(URL).then(data => { return data.json(); }).then(posts => { hideLoader(); posts.data.children.forEach(post => { let postObject = { imgurl: post.data.preview.images[0].resolutions[3].url, highresurl: post.data.url }; var image = '<li class="meme"><a href="' + postObject.highresurl + '" download><img class="meme" src="' + postObject.imgurl + '"></a></li>'; imageList.innerHTML += image; }); }); function hideLoader() { var loader = document.getElementById("loader"); loader.style.display = "none"; } </script>
+    <script>
+        var URL = "https://www.reddit.com/r/wallpaper/top/.json?sort=top&t=today&limit=20";
+        const imageList = document.getElementById("memeul");
+        fetch(URL).then(data => {
+            return data.json();
+        }).then(posts => {
+            hideLoader();
+            posts.data.children.forEach(post => {
+                let postObject = {
+                    imgurl: post.data.preview.images[0].resolutions[3].url,
+                    highresurl: post.data.url
+                };
+                var image = '<li class="meme"><a href="' + postObject.highresurl + '" download><img class="meme" src="' + postObject.imgurl + '"></a></li>';
+                imageList.innerHTML += image;
+            });
+        });
+
+        function hideLoader() {
+            var loader = document.getElementById("loader");
+            loader.style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
