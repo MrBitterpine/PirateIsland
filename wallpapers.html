@@ -10,6 +10,56 @@
 </head>
 
 <body>
+    <style>
+        input[type=number],
+        select {
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .parallax {
+            background-image: url('images/background3.jpg');
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .inputdiv {
+            background-color: #ccc;
+            padding: 8px;
+        }
+    </style>
+    <div class="inputdiv"> <label for="limit">No of wallpapers to load</label> <input type="number" id="limit" name="limit" max="500" value="100" step="1"> <label for="sort">Sort By</label> <select name="sort" id="sort" onChange="if(this.value.toString()=='top'){document.getElementById('timelabel').style.display='inline-block';document.getElementById('time').style.display='inline-block';}else{document.getElementById('timelabel').style.display='none';document.getElementById('time').style.display='none';}">
+            <option value="top">Top</option>
+            <option value="hot">Hot</option>
+            <option value="new">New</option>
+        </select> <label for="time" id="timelabel">Sort By</label> <select name="time" id="time">
+            <option value="today">Today</option>
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+            <option value="year">This Year</option>
+            <option value="all">All Time</option>
+        </select> <button onclick="custom()">Load Wallpapers</button> </div>
     <div class="loader" id="loader"></div>
     <div>
         <ul class="meme" style="grid-template-columns: repeat(2, 1fr);" id="memeul"></ul>
@@ -30,6 +80,36 @@
                 imageList.innerHTML += image;
             });
         });
+
+        function LoadMemes(sort, time, limit) {
+            fetchUrl = "https://www.reddit.com/r/wallpaper/top/.json?sort=" + sort + "&t=" + time + "&limit=" + limit
+            const imageList = document.getElementById("memeul");
+            imageList.innerHTML = "";
+            var loader = document.getElementById("loader");
+            fetch(fetchUrl).then(data => {
+                return data.json();
+            }).then(posts => {
+                posts.data.children.forEach(post => {
+                    let postObject = {
+                        imgurl: post.data.preview.images[0].resolutions[3].url,
+                        highresurl: post.data.url
+                    };
+                    var image = '<li class="meme"><a href="' + postObject.highresurl + '" download><img class="meme" src="' + postObject.imgurl + '"></a></li>';
+                    imageList.innerHTML += image;
+                });
+                loader.style.display = "none";
+            });
+        }
+
+        function custom() {
+            var memetime = document.getElementById("time").value.toString();
+            var memesort = document.getElementById("sort").value.toString();
+            var memelimit = document.getElementById("limit").value.toString();
+            if (memesort !== "top") {
+                memetime = "";
+            }
+            LoadMemes(memesort, memetime, memelimit)
+        }
 
         function hideLoader() {
             var loader = document.getElementById("loader");
