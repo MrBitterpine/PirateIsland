@@ -21,9 +21,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 60px 100px 100px rgb(0 0 0);
-    background: rgb(194,202,255);
-    background: linear-gradient(329deg, rgba(194,202,255,1) 0%, rgba(237,197,255,1) 100%);
+    box-shadow: 0px 0px 68px 44px rgb(0 0 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/texture.jpeg");
+    object-fit: cover;
     height: 30%;
     width: 95%;
     position: fixed;
