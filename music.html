@@ -63,7 +63,7 @@
             }).then(posts => {
                 document.getElementById("loader").style.display = "none";
                 table.innerHTML = '<tr><th>Cover</th><th>Title</th><th>Download</th></tr>';
-                posts.slice().reverse().forEach(post => {
+                posts.forEach(post => {
                     var title = post.title;
                     var thumbnail = post.videoThumbnails[4].url;
                     var id = post.videoId;
