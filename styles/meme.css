@@ -155,6 +155,11 @@ li.meme button.meme {
 li.meme:hover button.meme {
     display: block;
 }
+@media (pointer:coarse) {
+    li.meme button.meme {
+    display: block;
+}
+        }
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {
         display: none;
