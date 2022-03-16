@@ -32,6 +32,9 @@
             </table>
         </div>
     </div>
+    <div id="moviecollection">
+        <ul class="movie" id="memeul"></ul>
+    </div>
     <script>
         const input = document.getElementById("search");
         input.addEventListener("keyup", function(event) {
@@ -41,10 +44,40 @@
             }
         });
 
+        function LoadMovies(page) {
+
+            fetchUrl = "https://api.themoviedb.org/3/discover/movie?api_key=05159cb3f7a10f4e876ea3579592cd55&include_video=true&language=en-US&sort_by=popularity.desc&page=" + page
+
+            const imageList = document.getElementById("memeul");
+            var memelist = [];
+            fetch(fetchUrl).then(data => {
+                return data.json();
+            }).then(posts => {
+                posts.results.forEach(post => {
+                    imageList.innerHTML += '<li class="movie"><div class="movie" onclick="searchMovie(this)"><img src="https://image.tmdb.org/t/p/w300' + post.poster_path + '"><div class="movie_title">' + post.original_title + '</div><div class="movie_year">' + post.release_date + '</div></div></li>';
+
+                });
+            });
+        }
+        var page = 1;
+        LoadMovies(page)
+        window.onscroll = function() {
+            if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+                page++
+                LoadMovies(page)
+            }
+        }
+
+        function searchMovie(element) {
+            var searchTag = element.getElementsByClassName("movie_title")[0].innerHTML;
+            input.value = searchTag;
+            Search();
+        }
+
         function Search() {
             document.getElementById("loader").style.display = "flex";
             let data = input.value;
-            document.getElementById("button").style.display = "none";
+            document.getElementById("moviecollection").style.display = "none";
             const kota_URL = "https://torrents-api.ryukme.repl.co/api/1337x/" + encodeURIComponent(data) + "/1";
             const table = document.getElementById("result");
             fetch(kota_URL).then(data => {
