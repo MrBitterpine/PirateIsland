@@ -143,6 +143,18 @@ body {
     color: white;
 }
 
+li.meme button.meme {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    padding: 0;
+    display: none;
+    font-size: 27px;
+}
+li.meme:hover button.meme {
+    display: block;
+}
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {
         display: none;

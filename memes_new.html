@@ -12,8 +12,8 @@
 </head>
 
 <body>
-    <div class="topnav" id="myTopnav"> <a class="active">Pirate Island Memes</a> <a href="memes_new.html?r=tkasylum">KOTA</a> <a href="memes_new.html?r=piefm">Maniya</a> <a href="memes_new.html?r=sinhalamemes">Sinhala Memes</a> <a href="memes_new.html?r=memes">Memes</a> <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a> </div>
-    <div class="inputdiv"> <label for="limit">No Of memes to Load</label> <input type="number" id="limit" name="limit" max="500" value="100" step="1"> <label for="sort">Sort By</label> <select name="sort" id="sort" onChange="if(this.value.toString()=='top'){document.getElementById('timelabel').style.display='inline-block';document.getElementById('time').style.display='inline-block';}else{document.getElementById('timelabel').style.display='none';document.getElementById('time').style.display='none';}">
+    <div class="topnav" id="myTopnav"> <a class="active" href="memes_fav.html">Pinned Memes</a> <a href="memes_new.html?r=tkasylum">KOTA</a> <a href="memes_new.html?r=piefm">Maniya</a> <a href="memes_new.html?r=sinhalamemes">Sinhala Memes</a> <a href="memes_new.html?r=memes">Memes</a> <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a> </div>
+    <div class="inputdiv"> <label for="limit">No of memes to load</label> <input type="number" id="limit" name="limit" max="500" value="100" step="1"> <label for="sort">Sort By</label> <select name="sort" id="sort" onChange="if(this.value.toString()=='top'){document.getElementById('timelabel').style.display='inline-block';document.getElementById('time').style.display='inline-block';}else{document.getElementById('timelabel').style.display='none';document.getElementById('time').style.display='none';}">
             <option value="top">Top</option>
             <option value="hot">Hot</option>
             <option value="new">New</option>
@@ -48,11 +48,28 @@
                 posts.data.children.forEach(post => {
                     var imgurl = post.data.url;
                     if (imgurl.endsWith("png") || imgurl.endsWith("jpg") || imgurl.endsWith("jpeg") || imgurl.endsWith("webp")) {
-                        imageList.innerHTML += '<li class="meme"><img class="meme" src="' + imgurl + '"></li>';
+                        imageList.innerHTML += '<li class="meme"><button class="meme" onclick="pin(\'' + imgurl + '\')">📌</button><img class="meme" src="' + imgurl + '"></li>';
                     };
                 });
                 loader.style.display = "none";
             });
+        }
+        function pin(imgurl){
+            const postData = {
+            link: imgurl
+        };
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(postData),
+            headers: {
+                'Content-Type': 'application/json',
+                'collection': 'memes'
+            }
+        }
+        fetch("https://desertisland.herokuapp.com/", options)
+            .then(res => res.json())
+            .then(res => console.log(res));
+        alert("Pinned the meme to favourite memes")
         }
 
         function myFunction() {
