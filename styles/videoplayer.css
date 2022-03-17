@@ -80,3 +80,112 @@ video:focus {
     width: 100%;
     height: 100%;
 }
+
+.topbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.534);
+    height: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.topbar button {
+    width: 100%;
+    height: fit-content;
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    background-color: #949494;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 2px #000;
+}
+
+.topbar button:hover,
+.toolbar button:hover {
+    background-color: #5e5e5e;
+}
+
+
+#newpost div {
+    font-size: 30px;
+    display: flex;
+    margin: 10px;
+}
+
+#newpost div label {
+    font-size: 30px;
+    width: 25%;
+    display: inline-block;
+}
+
+#newpost div input,
+#newpost div textarea {
+    font-size: 30px;
+    width: 75%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#newpostpadding {
+    display: none;
+    padding-top: 5%;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#newpostpadding>div {
+    width: 50%;
+    height: fit-content;
+    font-size: 30px;
+    padding: 30px;
+    background-color: rgb(141 141 141);
+    border-radius: 50px;
+    box-shadow: 0 0 60px 35px #000;
+}
+
+#newpostpadding>div>div.toolbar {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: fit-content;
+}
+
+.toolbar button {
+    height: fit-content;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    background-color: #c9c9c9;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 2px #000;
+}
+
+@media screen and (max-width: 700px) {
+    #newpostpadding>div {
+        width: 80%;
+    }
+
+    .title {
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topbar {
+        flex-direction: column;
+    }
+
+    .topbar button {
+        margin: 6px 0px 6px 0px;
+    }
+}

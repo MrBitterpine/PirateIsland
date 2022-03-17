@@ -5,12 +5,17 @@
     <title>Funny Videos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Finger+Paint">
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/videoplayer.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
+    <div class="topbar">
+        <button onclick="newpost()">Add new videos</button></div>
+    <div id="loader">
+        <div></div>
+    </div>
     <div class="container">
         <ul id="vidlist"></ul>
     </div>
@@ -21,7 +26,26 @@
             </video>
         </div>
     </div>
+    <div id="newpostpadding">
+        <div>
+            <div id="newpost">
+                <div><label for="topic">Video Title</label><input type="text" id="topic" name="topic" placeholder="Video title"></div>
+                <div><label for="subject">Video Link</label><textarea id="subject" name="subject" placeholder="Use only video links. No Youtube link allowed." style="height:200px"></textarea></div>
+            </div>
+            <div class="toolbar">
+                <button onclick="submit()">Submit</button><button onclick="closenewpost()">Close</button>
+            </div>
+        </div>
+
+    </div>
     <script>
+        function newpost() {
+            document.getElementById("newpostpadding").style.display = "flex";
+        }
+
+        function closenewpost() {
+            document.getElementById("newpostpadding").style.display = "none";
+        }
         var videoPlayer = document.getElementById("videopadding");
         var myVideo = document.getElementById("myVideo");
 
@@ -35,14 +59,18 @@
             myVideo.play();
             videoPlayer.style.display = "flex";
         }
-    </script>
-    <script>
-        const request_URL = "https://raw.githubusercontent.com/SuhasDissa/DesertIsland/master/videos/videos.json";
+        document.getElementById("loader").style.display = "flex";
         const videoList = document.getElementById("vidlist");
-        fetch(request_URL).then(data => {
+        fetch("https://desertisland.herokuapp.com/", {
+            method: 'GET',
+            headers: {
+                'collection': 'videos'
+            }
+        }).then(data => {
             return data.json();
         }).then(posts => {
-            posts.links.forEach(post => {
+            document.getElementById("loader").style.display = "none";
+            posts.slice().reverse().forEach(post => {
                 let postObject = {
                     vidlink: post.link,
                     vidtitle: post.title
@@ -51,6 +79,33 @@
                 videoList.innerHTML += video;
             });
         });
+
+        function submit() {
+            var title = document.getElementById("topic").value;
+            var link = document.getElementById("subject").value;
+
+            if (!topic || !subject) {
+                alert("Fuck Fill all stuff nigge")
+            } else {
+                const postData = {
+                    title: title,
+                    link: link
+                };
+                const options = {
+                    method: 'POST',
+                    body: JSON.stringify(postData),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'collection': 'videos'
+                    }
+                }
+                fetch("https://desertisland.herokuapp.com/", options)
+                    .then(res => res.json())
+                    .then(res => console.log(res));
+                closenewpost();
+                alert("Done submittin! Your vid will appear here later");
+            }
+        }
     </script>
 </body>
 

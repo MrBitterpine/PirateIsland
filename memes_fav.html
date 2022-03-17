@@ -17,22 +17,22 @@
         <ul class="meme" id="memeul"></ul>
     </div>
     <script>
-const imageList = document.getElementById("memeul");
-            var loader = document.getElementById("loader")
+        const imageList = document.getElementById("memeul");
+        var loader = document.getElementById("loader")
         fetch("https://desertisland.herokuapp.com/", {
-    method: 'GET',
-    headers: {
-        'collection': 'memes'
-    }
-}).then(data => {
-    console.log(data);
-    return data.json();
-}).then(obj => {
-    console.log(obj);
-    obj.slice().reverse().forEach(posts => {
-        imageList.innerHTML += '<li class="meme"><img class="meme" src="' + posts.link + '"></li>'
-    });
-});
+            method: 'GET',
+            headers: {
+                'collection': 'memes'
+            }
+        }).then(data => {
+            console.log(data);
+            return data.json();
+        }).then(obj => {
+            console.log(obj);
+            obj.slice().reverse().forEach(posts => {
+                imageList.innerHTML += '<li class="meme"><img class="meme" src="' + posts.link + '"></li>'
+            });
+        });
     </script>
 </body>
 
