@@ -20,9 +20,8 @@
         <ul id="vidlist"></ul>
     </div>
     <div class="videopadding" id="videopadding">
+        <img src="images/close.png" class="close" onclick="stop()" />
         <div id="videoPlayer">
-            <img src="images/close.png" class="close" onclick="stop()" />
-            <video controls autoplay id="myVideo">
             </video>
         </div>
     </div>
@@ -30,7 +29,7 @@
         <div>
             <div id="newpost">
                 <div><label for="topic">Video Title</label><input type="text" id="topic" name="topic" placeholder="Video title"></div>
-                <div><label for="subject">Video Link</label><textarea id="subject" name="subject" placeholder="Use only video links. No Youtube link allowed." style="height:200px"></textarea></div>
+                <div><label for="subject">Video Link</label><textarea id="subject" name="subject" placeholder="Use valid video links. Youtube links are supported" style="height:200px"></textarea></div>
             </div>
             <div class="toolbar">
                 <button onclick="submit()">Submit</button><button onclick="closenewpost()">Close</button>
@@ -47,17 +46,34 @@
             document.getElementById("newpostpadding").style.display = "none";
         }
         var videoPlayer = document.getElementById("videopadding");
-        var myVideo = document.getElementById("myVideo");
 
         function stop() {
-            myVideo.pause();
+            document.getElementById("player").pause();
             videoPlayer.style.display = "none";
         }
 
+        function matchYoutubeUrl(url) {
+            var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+            return (url.match(p)) ? RegExp.$1 : false;
+        }
+
         function play(file) {
-            myVideo.src = file;
-            myVideo.play();
-            videoPlayer.style.display = "flex";
+            var youtube = matchYoutubeUrl(file);
+            if (youtube) {
+                const URL = "https://vid.puffyan.us/api/v1/videos/" + youtube + "?fields=formatStreams";
+                fetch(URL).then(data => {
+                    return data.json();
+                }).then(posts => {
+                    var vidurl = posts.formatStreams[1].url;
+                    document.getElementById("videoPlayer").innerHTML = '<video src="' + vidurl + '" controls autoplay id="player"></video>';
+                    document.getElementById("player").play();
+                    videoPlayer.style.display = "flex";
+                });
+            } else {
+                document.getElementById("videoPlayer").innerHTML = '<video src="' + file + '" controls autoplay id="player"></video>';
+                document.getElementById("player").play();
+                videoPlayer.style.display = "flex";
+            }
         }
         document.getElementById("loader").style.display = "flex";
         const videoList = document.getElementById("vidlist");

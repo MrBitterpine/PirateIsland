@@ -38,7 +38,7 @@ video:focus {
     cursor: pointer;
 }
 
-#myVideo {
+#player {
     border-radius: 20px;
 }
 
@@ -54,7 +54,7 @@ video:focus {
         height: 90%;
     }
 
-    #myVideo {
+    #player {
         height: 100%;
     }
 }
@@ -64,7 +64,7 @@ video:focus {
         width: 90%;
     }
 
-    #myVideo {
+    #player {
         width: 100%;
     }
 }
@@ -114,14 +114,14 @@ video:focus {
 }
 
 #newpost div label {
-    font-size: 30px;
+    font-size: 20px;
     width: 25%;
     display: inline-block;
 }
 
 #newpost div input,
 #newpost div textarea {
-    font-size: 30px;
+    font-size: 20px;
     width: 75%;
     padding: 12px;
     border: 1px solid #ccc;
