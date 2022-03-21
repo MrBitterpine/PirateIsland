@@ -78,18 +78,18 @@
             document.getElementById("loader").style.display = "flex";
             let data = input.value;
             document.getElementById("moviecollection").style.display = "none";
-            const kota_URL = "https://torrents-api.ryukme.repl.co/api/1337x/" + encodeURIComponent(data) + "/1";
+            const kota_URL = "https://torrents-api-py3.herokuapp.com/api/v1/search?site=1337x&query=" + encodeURIComponent(data);
             const table = document.getElementById("result");
             fetch(kota_URL).then(data => {
                 return data.json();
             }).then(posts => {
                 document.getElementById("loader").style.display = "none";
-                posts.forEach(post => {
+                posts.data.forEach(post => {
                     let postObject = {
-                        name: post.Name,
-                        magnet: post.Magnet,
-                        size: post.Size,
-                        seeders: post.Seeders
+                        name: post.name,
+                        magnet: post.magnet,
+                        size: post.size,
+                        seeders: post.seeders
                     };
                     var tr = '<tr><td>' + postObject.name + '</td><td>' + postObject.seeders + '</td><td>' + postObject.size + '</td><td><a href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>';
                     table.innerHTML += tr;
