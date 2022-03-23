@@ -74,10 +74,10 @@ li {
 div.mainpage {
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../images/texture.jpeg");
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
+    background-color: #1e1e1e;
 }
 
 a:hover>div {
