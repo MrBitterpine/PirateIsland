@@ -1,6 +1,7 @@
 body {
-    font-family: "Finger Paint", sans-serif;
-    background-image: url('../images/background.jpeg');
+    margin: 0;
+    font-family: "Comfortaa", sans-serif;
+    background-image: url('../images/background_light.jpeg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,4 +26,21 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     animation: spin 2s linear infinite;
+}
+
+.home {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-image: url("../images/home.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: url('../images/background.jpeg');
+    }
 }

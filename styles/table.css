@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 68px 44px rgb(0 0 0);
+    box-shadow: 0px 0px 55px 12px rgb(0 0 0);
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../images/whitewall.jpg");
@@ -95,8 +95,8 @@ button {
     background-color: #ffffff;
     color: black;
     border-width: 0;
-    border-radius: 20px;
-    padding: 14px 25px;
+    border-radius: 50px;
+    padding: 9px 19px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -108,6 +108,7 @@ button:hover {
 }
 
 .result tr button {
+    padding: 14px 25px;
     background-color: transparent;
 }
 
@@ -116,24 +117,26 @@ button:hover {
 }
 
 input[type=text] {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.267);
     width: auto;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid #fff0;
+    font-family: inherit;
     border-radius: 50px;
     font-size: 16px;
-    background-color: white;
+    background-color: #ffffffd9;
     background-position: 10px 10px;
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    backdrop-filter: inherit;
+    padding: 9px 0px 9px 16px;
+    color: black;
     width: 80%;
 }
 
 #tablediv {
-    background-color: white;
+    background-color: #ffffff2e;
     border-radius: 20px;
     padding: 20px;
-    background-image: url("../images/whitewall.jpg");
+    backdrop-filter: blur(3px);
     display: none;
 }
 
@@ -208,12 +211,14 @@ li.movie>div.movie {
     object-fit: cover;
     display: block;
     border-radius: 20px;
-    background-color: black;
+    background-color: #ffffff94;
+    backdrop-filter: blur(6px);
 }
 
 li.movie>div.movie:hover {
     filter: brightness(50%);
     cursor: pointer;
+    transition-duration: 100ms;
 }
 
 li.movie>div.movie img {
@@ -224,7 +229,7 @@ li.movie>div.movie img {
 
 li.movie>div.movie div.movie_title {
     height: fit-content;
-    color: white;
+    color: black;
     padding: 10px;
     font-size: 18px;
     overflow: hidden;
@@ -233,7 +238,7 @@ li.movie>div.movie div.movie_title {
 
 li.movie>div.movie div.movie_year {
     height: fit-content;
-    color: white;
+    color: black;
     font-size: 15px;
     padding: 10px;
     overflow: hidden;
@@ -252,29 +257,140 @@ li.movie>div.movie div.movie_year {
 
 @media screen and (max-width: 600px) {
     .result tr {
-        font-size: small;
+        font-size: 11px;
     }
 
     .result tr button {
-        font-size: small;
+        font-size: 10px;
+        padding: 13px;
     }
 
     .result tr a {
-        font-size: small;
+        font-size: 10px;
+        padding: 10px;
     }
 
+    .result td img {
+        border-radius: 5px;
+    }
 }
 
 @media screen and (max-width: 500px) {
     .result tr {
-        font-size: smaller;
+        font-size: 9px;
     }
 
     .result tr button {
-        font-size: smaller;
+        font-size: 7px;
+        padding: 5px;
     }
 
     .result tr a {
-        font-size: smaller;
+        font-size: 7px;
+        padding: 5px;
+    }
+}
+
+.inputdevfixed {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #d7d7d700;
+    backdrop-filter: blur(6px);
+    padding: 12px 0px;
+    z-index: 99;
+}
+
+#button {
+    background-color: #ffffffbf;
+    color: black;
+    backdrop-filter: inherit;
+    box-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    #player {
+        background-image: url("../images/darkwall.jpg");
+        background-color: ghostwhite;
+    }
+
+    .result th {
+        color: #fff;
+    }
+
+    .result td {
+        color: #fff;
+    }
+
+    .result td img {
+        filter: brightness(0.7);
+    }
+
+    button {
+        box-shadow: inset 0 0 27px 0 rgb(255 255 255 / 40%), inset 0 0 26px 0 rgb(0 0 0 / 40%), inset 0 0 3px 5px rgb(0 0 0 / 5%), 2px 2px 4px 0 rgb(0 0 0 / 25%);
+        background-color: #ffffff;
+        color: black;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: #ffffffd6;
+    }
+
+    .result tr button {
+        background-color: #4e4e4e73;
+    }
+
+    .result tr button:hover {
+        background-color: #ffffff;
+    }
+
+    input[type=text] {
+        border: 2px solid #fff0;
+        font-family: inherit;
+        background-color: #5a5a5a94;
+        color: ghostwhite;
+    }
+
+    #tablediv {
+        background-color: #ffffff24;
+    }
+
+    a:link,
+    a:visited {
+        box-shadow: inset 0 0 27px 0 rgb(255 255 255 / 40%), inset 0 0 26px 0 rgb(0 0 0 / 40%), inset 0 0 3px 5px rgb(0 0 0 / 5%), 2px 2px 4px 0 rgb(0 0 0 / 25%);
+        background-color: #4e4e4e73;
+        color: black;
+    }
+
+    a:hover,
+    a:active {
+        background-color: #ffffff;
+    }
+
+    li.movie>div.movie div.movie_title {
+        color: white;
+    }
+
+    li.movie>div.movie div.movie_year {
+        color: white;
+    }
+
+    .inputdevfixed {
+        background-color: #0000007a;
+        backdrop-filter: blur(6px);
+    }
+
+    #button {
+        background-color: #5a5a5abf;
+        color: ghostwhite;
+    }
+
+    #thumb {
+        filter: brightness(0.7);
     }
 }

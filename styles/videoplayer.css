@@ -20,8 +20,9 @@ ul {
 
 li {
     padding: 0px 0px;
-    background-color: ghostwhite;
+    background-color: #aca2ff63;
     border-radius: 20px;
+    backdrop-filter: blur(10px);
     overflow: hidden;
     cursor: pointer;
 }
@@ -82,28 +83,32 @@ video:focus {
 }
 
 .topbar {
+    padding: 10px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.534);
+    background-color: rgb(255 255 255 / 42%);
     height: fit-content;
     display: flex;
+    justify-content: center;
+    backdrop-filter: blur(6px);
     flex-wrap: nowrap;
 }
 
 .topbar button {
-    width: 100%;
+    width: 80%;
     height: fit-content;
     margin: 10px;
     padding: 10px;
     font-size: 30px;
-    background-color: #949494;
+    background-color: #9999992e;
     border: none;
+    backdrop-filter: inherit;
     border-radius: 10px;
-    box-shadow: 0 0 15px 2px #000;
+    box-shadow: 0 0 6px 2px #000;
 }
 
 .topbar button:hover,
 .toolbar button:hover {
-    background-color: #5e5e5e;
+    background-color: #5e5e5e00;
 }
 
 
@@ -131,11 +136,12 @@ video:focus {
 
 #newpostpadding {
     display: none;
-    padding-top: 5%;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+    background-color: #00000061;
+    backdrop-filter: blur(6px);
     position: fixed;
     left: 0;
     top: 0;
@@ -146,9 +152,9 @@ video:focus {
     height: fit-content;
     font-size: 30px;
     padding: 30px;
-    background-color: rgb(141 141 141);
+    background-color: rgb(227 227 227);
     border-radius: 50px;
-    box-shadow: 0 0 60px 35px #000;
+    /* box-shadow: 0 0 60px 35px #000; */
 }
 
 #newpostpadding>div>div.toolbar {
@@ -167,7 +173,7 @@ video:focus {
     background-color: #c9c9c9;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 0 15px 2px #000;
+    box-shadow: 0 0 6px 2px #000;
 }
 
 @media screen and (max-width: 700px) {
@@ -188,4 +194,54 @@ video:focus {
     .topbar button {
         margin: 6px 0px 6px 0px;
     }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    p {
+        color: #000000;
+    }
+
+    li {
+        background-color: ghostwhite;
+    }
+
+    #videoPlayer {
+        background-color: white;
+    }
+
+    .videopadding {
+        background-color: #000000a4;
+    }
+
+    .topbar {
+        background-color: rgba(0, 0, 0, 0.534);
+    }
+
+    .topbar button {
+        background-color: #8383839c;
+        box-shadow: 0 0 15px 2px #000;
+    }
+
+    .toolbar button {
+        background-color: #3e3e3e;
+        box-shadow: 0 0 15px 2px #000;
+    }
+
+    .topbar button:hover,
+    .toolbar button:hover {
+        background-color: #5e5e5e;
+    }
+
+    #newpost div input,
+    #newpost div textarea {
+        border: 1px solid #ccc;
+    }
+
+    #newpostpadding>div {
+        background-color: rgb(76 75 75);
+        box-shadow: 0 0 60px 35px #000;
+    }
+
+
 }
