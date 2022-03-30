@@ -82,7 +82,6 @@ div.mainpage {
     object-fit: cover;
     border-radius: 20px;
     background-color: #ffffff8c;
-    backdrop-filter: blur(3px);
 }
 
 a:hover>div {

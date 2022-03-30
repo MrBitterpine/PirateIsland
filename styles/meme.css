@@ -97,8 +97,9 @@ button:hover {
 }
 
 .inputdiv {
-    background-color: #ccc;
+    background-color: #fff0;
     padding: 8px;
+    backdrop-filter: blur(6px);
 }
 
 body {
@@ -107,7 +108,8 @@ body {
 
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #33333357;
+    backdrop-filter: blur(6px);
 }
 
 .topnav a {
@@ -194,7 +196,7 @@ li.meme:hover button.meme {
 
 @media (prefers-color-scheme: dark) {
     .inputdiv {
-        background-color: #333;
+        /* background-color: #333; */
     }
 
     button {
