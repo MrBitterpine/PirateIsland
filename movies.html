@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/movie.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/movie.css">
     <title>PirateIsland Movies</title>
 </head>
 
@@ -43,6 +44,11 @@
                 Search()
             }
         });
+        var id = location.toString().split('?s=');
+        if (typeof id[1] !== 'undefined') {
+            input.value = decodeURIComponent(id[1]);
+            Search();
+        }
 
         function LoadMovies(page) {
 
@@ -77,6 +83,9 @@
         function Search() {
             document.getElementById("loader").style.display = "flex";
             let data = input.value;
+            window.history.pushState({
+                id: "100"
+            }, data, "/movies.html?s=" + encodeURIComponent(data));
             document.getElementById("moviecollection").style.display = "none";
             const kota_URL = "https://torrents-api-py3.herokuapp.com/api/v1/search?site=1337x&query=" + encodeURIComponent(data);
             const table = document.getElementById("result");

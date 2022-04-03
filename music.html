@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/music.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Music Player</title>
@@ -26,15 +27,15 @@
             <table id="result" class="result"></table>
         </div>
         <div id="playerdiv">
-        <div id="player">
-            <img id="thumb" src="">
-            <div>
-                <h4 id="heading"></h4><audio id="audio" src="" controls autoplay></audio>
+            <div id="player">
+                <img id="thumb" src="">
+                <div>
+                    <h4 id="heading"></h4><audio id="audio" src="" controls autoplay></audio>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    
+
     <script>
         const table = document.getElementById("result");
         const input = document.getElementById("search");

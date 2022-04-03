@@ -7,7 +7,7 @@
     <title>Piratesland Movies</title>
     <style>
         .parallax {
-            background-image: url('../images/background.jpeg');
+            background-image: url('images/background.jpeg');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -23,8 +23,8 @@
         data = location.toString().split('?torrent=');
         if (typeof data[1] !== 'undefined') {
             document.getElementById('video').src = decodeURIComponent(data[1]);
-        } else{
-        alert("This movie is currently Unavailable. Please Choose another movie");
+        } else {
+            alert("This movie is currently Unavailable. Please Choose another movie");
         }
     </script>
 </body>
