@@ -83,9 +83,9 @@
         function Search() {
             document.getElementById("loader").style.display = "flex";
             let data = input.value;
-            window.history.pushState({
+           /* window.history.pushState({
                 id: "100"
-            }, data, "/movies.html?s=" + encodeURIComponent(data));
+            }, data, "/movies.html?s=" + encodeURIComponent(data));*/
             document.getElementById("moviecollection").style.display = "none";
             const kota_URL = "https://torrents-api-py3.herokuapp.com/api/v1/search?site=1337x&query=" + encodeURIComponent(data);
             const table = document.getElementById("result");

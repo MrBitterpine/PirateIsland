@@ -81,6 +81,9 @@ div#moviecollection {
 }
 
 @media (prefers-color-scheme: dark) {
+    li.movie>div.movie {
+    background-color: #16161694;
+}
     li.movie>div.movie div.movie_title {
         color: white;
     }

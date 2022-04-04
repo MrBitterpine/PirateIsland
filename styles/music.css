@@ -48,6 +48,9 @@ body {
     width: 376px;
     border-radius: 20px;
 }
+#tablediv {
+    overflow: scroll;
+}
 
 @media (orientation: portrait) {
     .tablepadding {
@@ -61,11 +64,6 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        /* box-shadow: 0px 0px 55px 12px rgb(0 0 0); */
-        /* background-color: ghostwhite; */
-        /* position: fixed; */
-        /* bottom: 0; */
-        /* border-radius: 20px 20px 0 0; */
         flex-wrap: nowrap;
         padding: 15px;
     }
@@ -108,14 +106,37 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-    #player {
-        /* background-image: url("../images/darkwall.jpg"); */
-        /* background-color: ghostwhite; */
-    }
-
     #thumb {
         filter: brightness(0.7);
     }
 }
 
-body {/* margin-top: 50px; */display: flex;}
+.tablepadding ::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tablepadding ::-webkit-scrollbar-track {
+    background: #ffffff3b;
+}
+
+.tablepadding ::-webkit-scrollbar-thumb {
+    background: #ffffffa3;
+    border-radius: 6px;
+}
+
+.tablepadding ::-webkit-scrollbar-thumb:hover {
+    background: #ffffffdb;
+
+}
+
+@media (prefers-color-scheme: dark) {
+   .tablepadding ::-webkit-scrollbar-thumb {
+        background: #d3d3d3b8;
+    }
+
+    .tablepadding ::-webkit-scrollbar-thumb:hover {
+        background: #ffffffdb;
+
+    }
+}
+body {display: flex;}

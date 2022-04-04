@@ -49,37 +49,8 @@ body {
     height: 50px;
     z-index: 100;
 }
-
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #ffffff3b;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #ffffffa3;
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffffffdb;
-
-}
-
 @media (prefers-color-scheme: dark) {
     body {
         background-image: url('../images/background.jpeg');
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #d3d3d3b8;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #ffffffdb;
-
     }
 }
