@@ -11,6 +11,9 @@
 </head>
 
 <body>
+<div id="loader">
+        <div></div>
+    </div>
     <div class="container">
         <ul id="vidlist"></ul>
     </div>
@@ -22,35 +25,12 @@
         </div>
     </div>
     <script>
-        var videoPlayer = document.getElementById("videopadding");
-        var myVideo = document.getElementById("myVideo");
-
-        function stop() {
-            myVideo.pause();
-            videoPlayer.style.display = "none";
-        }
-
-        function play(file) {
-            myVideo.src = file;
-            myVideo.play();
-            videoPlayer.style.display = "flex";
-        }
+        var fURL = "https://raw.githubusercontent.com/SuhasDissa/DesertIsland/master/videos/spongebob.json";
+        var fOPTIONS = {
+            method: 'GET'
+        };
     </script>
-    <script>
-        const request_URL = "https://raw.githubusercontent.com/SuhasDissa/DesertIsland/master/videos/spongebob.json";
-        const videoList = document.getElementById("vidlist");
-        fetch(request_URL).then(data => {
-            return data.json();
-        }).then(posts => {
-            posts.links.forEach(post => {
-                let postObject = {
-                    vidlink: post.link,
-                    vidtitle: post.title
-                };
-                var video = '<li onclick="play(\'' + postObject.vidlink + '\')"><p>' + postObject.vidtitle + '</p></li>';
-                videoList.innerHTML += video;
-            });
-        });
+    <script src="scripts/video.js">
     </script>
 </body>
 

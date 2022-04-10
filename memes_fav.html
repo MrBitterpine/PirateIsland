@@ -3,7 +3,6 @@
 
 <head>
     <title>Memes</title>
-    <link rel="stylesheet" href="meme/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="styles/main.css">
@@ -18,7 +17,7 @@
     </div>
     <script>
         const imageList = document.getElementById("memeul");
-        var loader = document.getElementById("loader")
+        var loader = document.getElementById("loader");
         fetch("https://desertisland.herokuapp.com/", {
             method: 'GET',
             headers: {
