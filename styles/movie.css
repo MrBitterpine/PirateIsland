@@ -42,8 +42,8 @@ li.movie>div.movie {
     object-fit: cover;
     display: block;
     border-radius: 20px;
-    background-color: #ffffff94;
-    /* backdrop-filter: blur(6px); */
+    background-color: #ffffff;
+    overflow: hidden;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);/* backdrop-filter: blur(6px); */
 }
 
 li.movie>div.movie:hover {

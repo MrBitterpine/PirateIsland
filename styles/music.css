@@ -10,14 +10,14 @@ body {
 #player {
     background-image: unset;
     display: flex;
-    background-color: #ffffff6b;
+    background-color: white;
     flex-direction: column;
     justify-content: space-around;
-    backdrop-filter: blur(6px);
+    
     align-items: center;
     padding: 25px;
-    box-shadow: none;
-    border-radius: 20px;
+    
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);border-radius: 20px;
     width: 100%;
     height: fit-content;
 }
@@ -130,6 +130,9 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
+    #player {
+        background-color: #121212;
+    color: white;}
    .tablepadding ::-webkit-scrollbar-thumb {
         background: #d3d3d3b8;
     }

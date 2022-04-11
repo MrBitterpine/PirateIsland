@@ -1,12 +1,12 @@
 body {
     margin: 0;
     font-family: "Comfortaa", sans-serif;
-    background-image: url('../images/background_light.jpeg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+    /* background-image: url('../images/background_light.jpeg'); */
+    /* background-attachment: fixed; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+background-color: #EDF2F6;}
 
 @keyframes spin {
     0% {
@@ -51,6 +51,6 @@ body {
 }
 @media (prefers-color-scheme: dark) {
     body {
-        background-image: url('../images/background.jpeg');
+        background-color: #222629;
     }
 }

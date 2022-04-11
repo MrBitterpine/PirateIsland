@@ -72,6 +72,7 @@ function Play(id, thumb, title) {
             thumb: thumb
         };
         songlist = JSON.parse(localStorage.recentsongs);
+        songlist = songlist.filter(function(x) { return x.id != lastsong.id; });
         songlist.push(lastsong);
         localStorage.recentsongs = JSON.stringify(songlist);
 

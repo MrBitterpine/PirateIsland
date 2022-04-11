@@ -45,16 +45,19 @@
 button {
     font-family: inherit;
     font-size: large;
-    box-shadow: var(--button-shadow);
+    
     background-color: #ffffff;
     color: black;
     border-width: 0;
-    border-radius: 50px;
+    border-radius: 14px;
     padding: 9px 19px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-}
+border-width: 2px;
+    border-radius: 14px;
+    color: #0e6dfd;
+    border: solid #0e6dfd;}
 
 button:hover {
     cursor: pointer;
@@ -67,34 +70,35 @@ button:hover {
 }
 
 .result tr button:hover {
-    background-color: #ffffff;
-}
+    
+background-color: #0e6dfd;
+    color: white;}
 
 input[type=text] {
     width: auto;
     box-sizing: border-box;
     border: 2px solid #fff0;
     font-family: inherit;
-    border-radius: 50px;
+    border-radius: 14px;
     font-size: 16px;
-    background-color: #ffffffd9;
+    background-color: #ffffff;
     background-position: 10px 10px;
     background-repeat: no-repeat;
-    backdrop-filter: inherit;
+    
     padding: 9px 0px 9px 16px;
     color: black;
     width: 80%;
-}
+box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);}
 
 #tablediv {
     height: 100%;
 
-    background-color: #ffffff2e;
+    background-color: #ffffff;
     border-radius: 20px;
     padding: 20px;
-    backdrop-filter: blur(3px);
+    /* backdrop-filter: blur(3px); */
     display: none;
-}
+max-width: 90%;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);}
 
 .tablepadding {
     overflow: hidden;
@@ -108,12 +112,12 @@ input[type=text] {
 a:link,
 a:visited {
     font-size: large;
-    box-shadow: var(--button-shadow);
-    background-color: var(--button-background);
-    color: var(--button-forground);
-    border-width: 0;
-    border-radius: 20px;
-    padding: 14px 25px;
+    
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);background-color: transparent;
+    
+    border-width: 2px;
+    border-radius: 14px;
+    color: #0e6dfd;border: solid #0e6dfd;padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -122,8 +126,8 @@ a:visited {
 a:hover,
 a:active {
     cursor: pointer;
-    background-color: var(--button-hover);
-}
+    background-color: #0e6dfd;
+color: white;}
 
 @media screen and (max-width: 600px) {
     .result tr {
@@ -176,10 +180,10 @@ a:active {
 }
 
 #button {
-    background-color: #ffffffbf;
-    color: black;
-    backdrop-filter: inherit;
-    box-shadow: none;
+    background-color: #0e6dfd;
+    color: white;
+    font-weight: bold;
+    /* padding: 13px 30px; */box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -198,9 +202,9 @@ a:active {
     }
 
     button {
-        box-shadow: var(--button-shadow-dark);
-        background-color: var(--button-background-dark);
-        color: var(--button-foreground-dark);
+        /* box-shadow: var(--button-shadow-dark); */
+        /* background-color: var(--button-background-dark); */
+        /* color: var(--button-foreground-dark); */
     }
 
     button:hover {
@@ -209,44 +213,46 @@ a:active {
     }
 
     .result tr button {
-        background-color: var(--button-background-dark);
+        /* background-color: var(--button-background-dark); */
     }
 
     .result tr button:hover {
-        background-color: var(--button-hover-dark);
+        /* background-color: var(--button-hover-dark); */
     }
 
     input[type=text] {
         border: 2px solid #fff0;
         font-family: inherit;
-        background-color: #5a5a5a94;
+        background-color: #3a3a3a;
         color: ghostwhite;
     }
 
     #tablediv {
-        background-color: #ffffff24;
+        background-color: #121212;
     }
 
     a:link,
     a:visited {
-        box-shadow: var(--button-shadow-dark);
-        background-color: var(--button-background-dark);
-        color: var(--button-foreground-dark);
+        /* box-shadow: var(--button-shadow-dark); */
+        /* background-color: var(--button-background-dark); */
+        /* color: var(--button-foreground-dark); */
     }
 
     a:hover,
     a:active {
-        background-color: var(--button-hover-dark);
+        /* background-color: var(--button-hover-dark); */
     }
 
     .inputdevfixed {
-        background-color: #0000007a;
+        
         backdrop-filter: blur(6px);
     }
 
     #button {
-        background-color: #5a5a5abf;
+        /* background-color: #3a3a3a; */
         color: ghostwhite;
     }
 
 }
+
+img#thumbnail {}
