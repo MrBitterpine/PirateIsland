@@ -24,7 +24,7 @@ li {
     border-radius: 20px;
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
     overflow: hidden;
-    cursor: pointer;
+    transition-duration: 100ms;cursor: pointer;
 }
 
 video:focus {
@@ -85,16 +85,16 @@ video:focus {
 .topbar {
     padding: 5px 0px 7px 0px;
     width: 100%;
-    background-color: rgb(255 255 255 / 0%);
+    background-color: transparent;
     height: fit-content;
     display: flex;
-    justify-content: center;
-    backdrop-filter: blur(6px);
+    justify-content: flex-end;
+    
     flex-wrap: nowrap;
 }
 
 .topbar button {
-    width: 80%;
+    width: fit-content;
     height: fit-content;
     margin: 10px;
     padding: 10px;
@@ -245,3 +245,5 @@ video:focus {
 
 
 }
+
+li:hover {transform: scale(1.05);box-shadow: 0 0.125rem 1.25rem 1em rgb(0 0 0 / 8%);}
