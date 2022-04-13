@@ -74,17 +74,17 @@ input[type=text]:focus-visible {
     border-width: 3px;
 }
 #tablediv {
-    height: 100%;
+    height: fit-content;
 
-    background-color: #ffffff;
+    max-height: 100%;background-color: #ffffff;
     border-radius: 20px;
     padding: 20px;
-    /* backdrop-filter: blur(3px); */
+    
     display: none;
 max-width: 90%;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);}
 
 .tablepadding {
-    overflow: hidden;
+    margin-top: 64px;height: calc(100vh - 123px);/* overflow: hidden; */
     width: 100%;
     padding-top: 10px;
     display: flex;

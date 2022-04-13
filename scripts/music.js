@@ -1,5 +1,6 @@
 const table = document.getElementById("result");
 const input = document.getElementById("search");
+var videoid = '';
 if (localStorage.recentsongs) {
     songlist = localStorage.recentsongs;
     object = JSON.parse(songlist);
@@ -18,7 +19,7 @@ input.addEventListener("keyup", function(event) {
 
 document.getElementById("audio").addEventListener("error", function(e) {
     if (e.currentTarget.error.code = 2 && document.getElementById("audio").getAttribute("src") != "") {
-        alert("Error Playing Song\n\n\nNote: VEVO songs are not playable due to copyright issues.");
+        playvid(videoid);
     }
 });
 
@@ -47,6 +48,7 @@ function Search() {
 function Play(id, thumb, title) {
     document.getElementById("thumb").src = thumb;
     document.getElementById("heading").innerHTML = title;
+    videoid = id;
     const URL = "https://vid.puffyan.us/api/v1/videos/" + id + "?fields=adaptiveFormats,recommendedVideos";
     fetch(URL).then(data => {
         return data.json();
@@ -72,7 +74,9 @@ function Play(id, thumb, title) {
             thumb: thumb
         };
         songlist = JSON.parse(localStorage.recentsongs);
-        songlist = songlist.filter(function(x) { return x.id != lastsong.id; });
+        songlist = songlist.filter(function(x) {
+            return x.id != lastsong.id;
+        });
         songlist.push(lastsong);
         localStorage.recentsongs = JSON.stringify(songlist);
 
@@ -84,4 +88,18 @@ function Play(id, thumb, title) {
         }];
         localStorage.recentsongs = JSON.stringify(newsong);
     }
+}
+var videoPlayer = document.getElementById("videopadding");
+
+function stop() {
+    document.getElementById("videoPlayer").innerHTML = '';
+
+    videoPlayer.style.display = "none";
+}
+
+function playvid(file) {
+    document.getElementById("videoPlayer").innerHTML = '<iframe src="https://yewtu.be/embed/' + file + '" frameborder="0" id="player"></iframe>';
+    //document.getElementsByTagName("video")[0].play();
+    videoPlayer.style.display = "flex";
+
 }

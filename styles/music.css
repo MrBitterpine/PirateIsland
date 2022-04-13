@@ -1,6 +1,7 @@
 body {
     height: 100vh;
-    display: block;max-height: 100vh;
+    display: block;
+    max-height: 100vh;
 }
 
 #audio {
@@ -13,11 +14,12 @@ body {
     background-color: white;
     flex-direction: column;
     justify-content: space-around;
-    
+
     align-items: center;
     padding: 25px;
-    
-    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);border-radius: 20px;
+
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    border-radius: 20px;
     width: 100%;
     height: fit-content;
 }
@@ -48,8 +50,9 @@ body {
     width: 376px;
     border-radius: 20px;
 }
+
 #tablediv {
-    overflow: scroll;
+    overflow: auto;
 }
 
 @media (orientation: portrait) {
@@ -132,8 +135,10 @@ body {
 @media (prefers-color-scheme: dark) {
     #player {
         background-color: #121212;
-    color: white;}
-   .tablepadding ::-webkit-scrollbar-thumb {
+        color: white;
+    }
+
+    .tablepadding ::-webkit-scrollbar-thumb {
         background: #d3d3d3b8;
     }
 
@@ -142,4 +147,63 @@ body {
 
     }
 }
-body {display: flex;}
+
+body {
+    display: flex;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#player {
+    border-radius: 20px;
+}
+
+#videoPlayer {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    display: block;
+}
+
+@media (orientation: landscape) {
+    #videoPlayer {
+        height: 90%;
+    }
+
+    #player {
+        height: 100%;
+    }
+}
+
+@media (orientation: portrait) {
+    #videoPlayer {
+        width: 90%;
+    }
+
+    #player {
+        width: 100%;
+    }
+}
+
+.videopadding {
+    background-color: #000000a4;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    max-height: 100%;
+    max-width: 100%;
+}
