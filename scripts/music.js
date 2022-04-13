@@ -91,15 +91,13 @@ function Play(id, thumb, title) {
 }
 var videoPlayer = document.getElementById("videopadding");
 
-function stop() {
-    document.getElementById("videoPlayer").innerHTML = '';
-
-    videoPlayer.style.display = "none";
-}
-
 function playvid(file) {
-    document.getElementById("videoPlayer").innerHTML = '<img src="images/close.png" class="close" onclick="stop()" /><iframe src="https://yewtu.be/embed/' + file + '" frameborder="0" id="player"></iframe>';
-    //document.getElementsByTagName("video")[0].play();
-    videoPlayer.style.display = "flex";
-
+    const URL = "https://yewtu.be/embed/" + file;
+    fetch(URL, {
+        headers: {
+            'mode': 'no-cors'
+        }
+    }).then(data => {
+        document.getElementById("audio").src = data.getElementsByTagName("video")[0].src;
+    });
 }
