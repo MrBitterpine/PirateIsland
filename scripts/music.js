@@ -98,7 +98,7 @@ function stop() {
 }
 
 function playvid(file) {
-    document.getElementById("videoPlayer").innerHTML = '<iframe src="https://yewtu.be/embed/' + file + '" frameborder="0" id="player"></iframe>';
+    document.getElementById("videoPlayer").innerHTML = '<img src="images/close.png" class="close" onclick="stop()" /><iframe src="https://yewtu.be/embed/' + file + '" frameborder="0" id="player"></iframe>';
     //document.getElementsByTagName("video")[0].play();
     videoPlayer.style.display = "flex";
 

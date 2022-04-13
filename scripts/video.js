@@ -25,12 +25,12 @@ function play(file) {
             return data.json();
         }).then(posts => {
             var vidurl = posts.formatStreams[1].url;
-            document.getElementById("videoPlayer").innerHTML = '<video src="' + vidurl + '" controls autoplay id="player"></video>';
+            document.getElementById("videoPlayer").innerHTML = '<img src="images/close.png" class="close" onclick="stop()" /><video src="' + vidurl + '" controls autoplay id="player"></video>';
             document.getElementById("player").play();
             videoPlayer.style.display = "flex";
         });
     } else {
-        document.getElementById("videoPlayer").innerHTML = '<video src="' + file + '" controls autoplay id="player"></video>';
+        document.getElementById("videoPlayer").innerHTML = '<img src="images/close.png" class="close" onclick="stop()" /><video src="' + file + '" controls autoplay id="player"></video>';
         document.getElementById("player").play();
         videoPlayer.style.display = "flex";
     }
