@@ -92,12 +92,8 @@ function Play(id, thumb, title) {
 var videoPlayer = document.getElementById("videopadding");
 
 function playvid(file) {
-    const URL = "https://yewtu.be/embed/" + file;
-    fetch(URL, {
-        headers: {
-            'mode': 'no-cors'
-        }
-    }).then(data => {
+    const URL = "https://cors-proxy.htmldriven.com/?url=https://yewtu.be/embed/" + file;
+    fetch(URL).then(data => {
         document.getElementById("audio").src = data.getElementsByTagName("video")[0].src;
     });
 }

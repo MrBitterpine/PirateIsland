@@ -84,7 +84,7 @@ input[type=text]:focus-visible {
 max-width: 90%;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);}
 
 .tablepadding {
-    margin-top: 64px;height: calc(100vh - 123px);/* overflow: hidden; */
+    margin-top: 64px;max-height: calc(100vh - 123px);height: calc(100vh - 123px);/* overflow: hidden; */
     width: 100%;
     padding-top: 10px;
     display: flex;
