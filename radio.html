@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/music.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Live Radio</title>
+</head>
+
+<body>
+    <div class="tablepadding">
+        <div id="tablediv">
+            <table id="recommended" class="result"></table>
+            <table id="result" class="result">
+                <tr>
+                    <th colspan="3" style="text-align:center;">
+                        <h2>Live Radio</h2>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="playerdiv">
+            <div id="player">
+                <img id="thumb" src="">
+                <div>
+                    <h4 id="heading"></h4><audio id="audio" src="" controls autoplay></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const radiolist = [{
+            name: "Neth FM",
+            thumb: "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2F-JBPtDQ4BtHIH0hdUA3chQVqDT_lt6hffC5uK1RLyqU%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ0FnUDdLdmdvTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ3dzT183a0FvTW9nRUVlbVZ1YncvaW1hZ2UvP3Jlc2l6ZT0yNDB4MjQwJnVwZGF0ZWQ9MTYxNjE2NDg0ODAwMA.webp&w=1920&q=75",
+            link: "https://stream.zeno.fm/emgkfd4f4p8uv"
+        }, {
+            name: "Hiru FM",
+            thumb: "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2FnmETf_9yO3N9Ye_8fTu26yXMbNAftveMLjKk65m9jh8%2Frs%3Afit%3A268%3A268%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ0FnUDdLdmdvTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ3dvS3VLNmdnTW9nRUVlbVZ1YncvaW1hZ2UvP3Jlc2l6ZT0yNjh4MjY4JnVwZGF0ZWQ9MTYxNTQwOTQ4NDAwMA.webp&w=384&q=75",
+            link: "https://stream.zeno.fm/49xrv7zbwp8uv"
+        }, {
+            name: "FM Derana",
+            thumb: "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2FL6HTkXO0fQTh6ullJDaPLyfFetCgDZSs4x8WWfChUIQ%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ0FnUDdLdmdvTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ3dnT3ZfZ2dvTW9nRUVlbVZ1YncvaW1hZ2UvP3Jlc2l6ZT0yNDB4MjQwJnVwZGF0ZWQ9MTYxNTU2MjYxNTAwMA.webp&w=1920&q=75",
+            link: "https://stream.zeno.fm/askgpkd8e18uv"
+        }, {
+            name: "Sirasa FM",
+            thumb: "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2F5kCxgOfZgWO09-3O-vmWffiD5u8qU1pT9zt0HOt4e8g%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ0FnUDdLdmdvTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ3drS0c0amdnTW9nRUVlbVZ1YncvaW1hZ2UvP3Jlc2l6ZT0yNDB4MjQwJnVwZGF0ZWQ9MTYxNTgxOTQzMzAwMA.webp&w=1920&q=75",
+            link: "https://stream.zeno.fm/df20w9rv0p8uv"
+        }];
+        table = document.getElementById("result");
+        radiolist.forEach(item => {
+            table.innerHTML += '<tr><td><img src="' + item.thumb + '"></td><td>' + item.name + '</td><td><button onclick="Play(\'' + item.link + '\',\'' + item.thumb + '\',\'' + item.name + '\')">Play</button></td</tr>';
+        });
+        document.getElementById("tablediv").style.display="block";
+
+        function Play(id, thumb, title) {
+            document.getElementById("thumb").src = thumb;
+            document.getElementById("heading").innerHTML = title;
+            document.getElementById("audio").src = id;
+            document.getElementById("playerdiv").style.display = "flex";
+        }
+    </script>
+</body>
+
+</html>
