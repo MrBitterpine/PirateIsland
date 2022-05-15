@@ -14,10 +14,8 @@ body {
     background-color: white;
     flex-direction: column;
     justify-content: space-around;
-
     align-items: center;
     padding: 25px;
-
     box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
     border-radius: 20px;
     width: 100%;
@@ -132,6 +130,7 @@ body {
 
 }
 
+/*
 @media (prefers-color-scheme: dark) {
     #player {
         background-color: #121212;
@@ -146,7 +145,7 @@ body {
         background: #ffffffdb;
 
     }
-}
+}*/
 
 body {
     display: flex;

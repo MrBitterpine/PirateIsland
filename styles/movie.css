@@ -43,14 +43,18 @@ li.movie>div.movie {
     display: block;
     border-radius: 20px;
     background-color: #ffffff;
-    overflow: hidden;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);transition-duration: 100ms;/* backdrop-filter: blur(6px); */
+    overflow: hidden;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    transition-duration: 100ms;
 }
 
 li.movie>div.movie:hover {
-    
+
     cursor: pointer;
-    
-box-shadow: 0 0.125rem 1.25rem 1em rgb(0 0 0 / 8%);transform: scale(1.05);}
+
+    box-shadow: 0 0.125rem 1.25rem 1em rgb(0 0 0 / 8%);
+    transform: scale(1.05);
+}
 
 li.movie>div.movie img {
     width: 100%;
@@ -63,7 +67,7 @@ li.movie>div.movie div.movie_title {
     color: black;
     padding: 10px;
     font-size: 18px;
-    
+
     width: 100%;
 }
 
@@ -72,7 +76,7 @@ li.movie>div.movie div.movie_year {
     color: black;
     font-size: 15px;
     padding: 10px;
-    
+
     width: 100%;
 }
 
@@ -80,6 +84,7 @@ div#moviecollection {
     overflow: hidden;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
     li.movie>div.movie {
     background-color: #16161694;
@@ -91,6 +96,8 @@ div#moviecollection {
     li.movie>div.movie div.movie_year {
         color: white;
     }
-}
+}*/
 
-.tablepadding {height: fit-content;}
+.tablepadding {
+    height: fit-content;
+}

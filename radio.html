@@ -56,7 +56,7 @@
         radiolist.forEach(item => {
             table.innerHTML += '<tr><td><img src="' + item.thumb + '"></td><td>' + item.name + '</td><td><button onclick="Play(\'' + item.link + '\',\'' + item.thumb + '\',\'' + item.name + '\')">Play</button></td</tr>';
         });
-        document.getElementById("tablediv").style.display="block";
+        document.getElementById("tablediv").style.display = "block";
 
         function Play(id, thumb, title) {
             document.getElementById("thumb").src = thumb;

@@ -32,11 +32,9 @@ li.meme {
 img.meme {
     width: 95%;
     object-fit: cover;
-    /* border-color: #606060; */
-    /* border-style: solid; */
-    /* border-width: 10px; */
     border-radius: 20px;
-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);}
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}
 
 .loader {
     margin: auto;
@@ -100,27 +98,31 @@ button:hover {
     background-color: #fff0;
     padding: 8px;
     backdrop-filter: blur(6px);
-/* display: flex; */}
 
-body {
-    font-family: "Finger+Paint", sans-serif
 }
 
 .topnav {
-    border-radius: 14px;width: fit-content;overflow: hidden;
-    display: flex;align-items: center;justify-content: center;box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);background-color: white;
-    
+    border-radius: 14px;
+    width: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    background-color: white;
+
 }
 
 .topnav a {
     float: left;
     display: block;
     color: black;
-    background-color: white;text-align: center;
+    background-color: white;
+    text-align: center;
     padding: 14px 16px;
-    /* border-radius: 14px; */text-decoration: none;
+    text-decoration: none;
     font-size: 17px;
-/* box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); */}
+}
 
 .active {
     background-color: #0085f1;
@@ -194,14 +196,19 @@ li.meme:hover button.meme {
     }
 }
 
+/*
 @media (prefers-color-scheme: dark) {
     .inputdiv {
-        /* background-color: #333; */
-    }
-
-    button {
-        background-color: #626262;
-    }
 }
 
-.navbar {display: flex;justify-content: center;align-items: center;}
+button {
+    background-color: #626262;
+}
+}
+
+*/
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
