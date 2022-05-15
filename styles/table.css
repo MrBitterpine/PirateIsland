@@ -49,7 +49,7 @@ button:hover {
 
 .result tr button:hover {
     
-background-color: #0e6dfd;
+background-color: #4586ff;
     color: white;}
 
 input[type=text] {
@@ -59,14 +59,15 @@ input[type=text] {
     font-family: inherit;
     border-radius: 14px;
     font-size: 16px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     background-position: 10px 10px;
     background-repeat: no-repeat;
     
     padding: 9px 0px 9px 16px;
     color: black;
     width: 80%;
-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);}
+/* box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); */box-shadow: 0 3px 9px rgb(0 82 224 / 16%);
+    background: linear-gradient(180deg,#FFF 0,#F5FAFE 100%);}
 
 input[type=text]:focus-visible {
     outline: none;
@@ -81,7 +82,8 @@ input[type=text]:focus-visible {
     padding: 20px;
     
     display: none;
-max-width: 90%;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);}
+max-width: 90%;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    }
 
 .tablepadding {
     margin-top: 64px;max-height: calc(100vh - 123px);height: calc(100vh - 123px);/* overflow: hidden; */
@@ -95,11 +97,11 @@ max-width: 90%;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);}
 a:link, a:visited, button {
     font-size: large;
     
-    font-family: inherit;box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);background-color: transparent;
+    font-family: inherit;box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);box-shadow: 0 3px 9px #4586ff7d;background-color: transparent;
     
     border-width: 2px;
     border-radius: 14px;
-    color: #0e6dfd;border: solid #0e6dfd;padding: 14px 25px;
+    color: #4586ff;border: solid #4586ff;padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -108,7 +110,7 @@ a:link, a:visited, button {
 a:hover,
 a:active {
     cursor: pointer;
-    background-color: #0e6dfd;
+    background-color: #4586ff;
 color: white;}
 
 @media screen and (max-width: 600px) {
@@ -166,7 +168,8 @@ color: white;}
     color: white;
     font-weight: bold;
     padding: 7px 30px;box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-}
+box-shadow: 0 3px 9px #4586ff7d;
+    background: #4586ff;}
 
 @media (prefers-color-scheme: dark) {
 
@@ -205,7 +208,7 @@ color: white;}
     input[type=text] {
         border: 2px solid #fff0;
         font-family: inherit;
-        background-color: #3a3a3a;
+        background: #3a3a3a;
         color: ghostwhite;
     }
 
