@@ -19,7 +19,7 @@ input.addEventListener("keyup", function(event) {
 
 document.getElementById("audio").addEventListener("error", function(e) {
     if (e.currentTarget.error.code = 2 && document.getElementById("audio").getAttribute("src") != "") {
-        playvid(videoid);
+        alert("Error Playing that song! Maybe its blocked in your country")
     }
 });
 
@@ -90,10 +90,3 @@ function Play(id, thumb, title) {
     }
 }
 var videoPlayer = document.getElementById("videopadding");
-
-function playvid(file) {
-    const URL = "https://cors-proxy.htmldriven.com/?url=https://yewtu.be/embed/" + file;
-    fetch(URL).then(data => {
-        document.getElementById("audio").src = data.getElementsByTagName("video")[0].src;
-    });
-}
