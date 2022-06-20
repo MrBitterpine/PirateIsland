@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/table.css">
     <link rel="stylesheet" href="styles/music.css">
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Live Radio</title>
 </head>
@@ -52,7 +52,7 @@
         }];
         table = document.getElementById("result");
         radiolist.forEach(item => {
-            table.innerHTML += '<tr><td><img src="' + item.thumb + '"></td><td>' + item.name + '</td><td><button onclick="Play(\'' + item.link + '\',\'' + item.thumb + '\',\'' + item.name + '\')">Play</button></td</tr>';
+            table.innerHTML += '<tr><td>' + item.name + '</td><td><button onclick="Play(\'' + item.link + '\',\'' + item.thumb + '\',\'' + item.name + '\')">Play</button></td</tr>';
         });
         document.getElementById("tablediv").style.display = "block";
 

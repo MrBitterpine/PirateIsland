@@ -6,8 +6,8 @@
     <title>Pirate Island</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/homepage.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
@@ -68,15 +68,27 @@
             description: "Listen to online radio stations",
             image: "images/radio.svg"
         }, {
-            href: "https://apipakayo.glitch.me/",
-            title: "Api Pakayo",
-            description: "A place to read and post stories/songs",
-            image: "images/feed.svg"
+            href: "https://t.me/+IQGr_jjgETUzYzA1",
+            title: "PirateIsland Telegram Channel",
+            description: "Get latest news and Tips",
+            image: "images/telegram.svg"
         }];
         data.forEach(item => {
-            var line = '<li><a href="' + item.href + '"><div class="mainpage"> <img src="' + item.image + '" alt="' + item.title + '"> <div> <p><b>' + item.title + '<br></b></p> <p>' + item.description + '</p> </div> </div> </a></li>';
+            var line = '<li><a onmouseover="hover.play()" href="' + item.href + '"><div class="mainpage"> <img src="' + item.image + '" alt="' + item.title + '"> <div> <p><b>' + item.title + '<br></b></p> <p>' + item.description + '</p> </div> </div> </a></li>';
             document.getElementById("menulist").innerHTML += line;
         });
+        function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+    this.sound.play();
+}
+}
+const hover = new sound("hover.wav");
     </script>
 </body>
 
