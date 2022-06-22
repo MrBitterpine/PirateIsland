@@ -30,12 +30,12 @@
     color: rgb(0, 0, 0);
 }
 
-button:hover {
+.button:hover {
     cursor: pointer;
     background-color: white;
 }
 
-.result tr button:hover {
+.result tr .button:hover {
 
     background-color: #4586ff;
     color: white;
@@ -89,9 +89,7 @@ input[type=text]:focus-visible {
     align-items: flex-start;
 }
 
-a:link,
-a:visited,
-button {
+.button {
     font-size: large;
 
     font-family: inherit;
@@ -109,8 +107,7 @@ button {
     display: inline-block;
 }
 
-a:hover,
-a:active {
+.button:hover {
     cursor: pointer;
     background-color: #4586ff;
     color: white;
@@ -121,12 +118,12 @@ a:active {
         font-size: 11px;
     }
 
-    .result tr button {
+    .result tr .button {
         font-size: 10px;
         padding: 13px;
     }
 
-    .result tr a {
+    .result tr .button{
         font-size: 10px;
         padding: 10px;
     }
@@ -141,12 +138,12 @@ a:active {
         font-size: 9px;
     }
 
-    .result tr button {
+    .result tr .button {
         font-size: 7px;
         padding: 5px;
     }
 
-    .result tr a {
+    .result tr .button {
         font-size: 7px;
         padding: 5px;
     }
@@ -163,7 +160,7 @@ a:active {
     background-color: #d7d7d700;
     backdrop-filter: blur(6px);
     padding: 12px 0px;
-    z-index: 99;
+    z-index: 9;
 }
 
 #button {

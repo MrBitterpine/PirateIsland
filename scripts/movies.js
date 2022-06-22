@@ -61,7 +61,7 @@ function Search() {
                 size: post.size,
                 seeders: post.seeders
             };
-            var tr = '<tr><td>' + postObject.name + '</td><td>' + postObject.seeders + '</td><td>' + postObject.size + '</td><td><a href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>';
+            var tr = '<tr><td>' + postObject.name + '</td><td>' + postObject.seeders + '</td><td>' + postObject.size + '</td><td><a class="button" href="play.html?torrent=' + encodeURIComponent(postObject.magnet) + '">Play</a></td></tr>';
             table.innerHTML += tr;
         });
         document.getElementById("tablediv").style.display = "block";

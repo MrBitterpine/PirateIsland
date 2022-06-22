@@ -53,7 +53,7 @@
         }];
         table = document.getElementById("result");
         radiolist.forEach(item => {
-            table.innerHTML += '<tr><td>' + item.name + '</td><td><button onclick="Play(\'' + item.link + '\',\'' + item.thumb + '\',\'' + item.name + '\')">Play</button></td</tr>';
+            table.innerHTML += '<tr><td>' + item.name + '</td><td><button class="button" onclick="Play(\'' + item.link + '\',\'' + item.thumb + '\',\'' + item.name + '\')">Play</button></td</tr>';
         });
         document.getElementById("tablediv").style.display = "block";
 

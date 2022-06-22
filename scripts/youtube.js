@@ -15,7 +15,7 @@ if (typeof id[1] !== 'undefined') {
                 quality: post.qualityLabel,
                 link: post.url
             };
-            var tr = '<tr><td>' + postObject.res + '</td><td>' + postObject.container + '</td><td>' + postObject.quality + '</td><td><a href=' + postObject.link + '>Play</a></td></tr>';
+            var tr = '<tr><td>' + postObject.res + '</td><td>' + postObject.container + '</td><td>' + postObject.quality + '</td><td><a class="button" href=' + postObject.link + '>Play</a></td></tr>';
             table.innerHTML += tr;
         });
         document.getElementById("tablediv").style.display = "block";
@@ -52,7 +52,7 @@ function Search() {
                     quality: post.qualityLabel,
                     link: post.url
                 };
-                var tr = '<tr><td>' + postObject.res + '</td><td>' + postObject.container + '</td><td>' + postObject.quality + '</td><td><a href=' + postObject.link + '>Play</a></td></tr>';
+                var tr = '<tr><td>' + postObject.res + '</td><td>' + postObject.container + '</td><td>' + postObject.quality + '</td><td><a class="button" href=' + postObject.link + '>Play</a></td></tr>';
                 table.innerHTML += tr;
             });
             document.getElementById("tablediv").style.display = "block";
@@ -70,7 +70,7 @@ function Search() {
                 var title = post.title;
                 var thumbnail = post.videoThumbnails[4].url;
                 var id = post.videoId;
-                var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><a href="youtube.html?id=' + id + '">Download</a></td></tr>';
+                var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><a class="button" href="youtube.html?id=' + id + '">Download</a></td></tr>';
                 table.innerHTML += tr;
             });
             document.getElementById("tablediv").style.display = "block";

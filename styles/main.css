@@ -28,12 +28,12 @@ button,input{
     all:unset;
 }
 .curl {
-	width: 50px;
-	height: 50px;
-	position: absolute;
+    width: 50px;
+    height: 50px;
+    position: fixed;
 	top:0;
 	left:0;
-	background :
+    background :
 		linear-gradient(
 			135deg,
 			#fff,
@@ -45,8 +45,9 @@ button,input{
 			#f3f3f3 80%,
 			#fff 100%
 		);
-	box-shadow : 0 0 10px rgba(0, 0, 0, .5);
-	transition-duration: 200ms;
+    box-shadow : 0 0 10px rgba(0, 0, 0, .5);
+    transition-duration: 200ms;
+    z-index: 100;
 }
 
 .curl:hover {

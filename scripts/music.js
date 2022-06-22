@@ -6,7 +6,7 @@ if (localStorage.recentsongs) {
     object = JSON.parse(songlist);
     table.innerHTML = '<tr><th colspan="3" style="text-align:center;"><h2>Recent Songs</h2></th></tr><tr><th>Cover</th><th>Title</th><th>Download</th></tr>'
     object.slice().reverse().forEach(music => {
-        table.innerHTML += '<tr><td><img src="' + music.thumb + '"></td><td>' + music.title + '</td><td><button onclick="Play(\'' + music.id + '\',\'' + music.thumb + '\',\'' + music.title + '\')">Play</button><a href="youtube.html?id=' + music.id + '">Download</a><a target="_blank" href="https://www.youtube.com/watch?v=' + music.id + '">Watch In Youtube</a></td></tr>'
+        table.innerHTML += '<tr><td><img src="' + music.thumb + '"></td><td>' + music.title + '</td><td><button class="button" onclick="Play(\'' + music.id + '\',\'' + music.thumb + '\',\'' + music.title + '\')">Play</button><a class="button" href="youtube.html?id=' + music.id + '">Download</a><a class="button" target="_blank" href="https://www.youtube.com/watch?v=' + music.id + '">Watch In Youtube</a></td></tr>'
     });
     document.getElementById("tablediv").style.display = "block";
 }
@@ -37,7 +37,7 @@ function Search() {
             var thumbnail = post.videoThumbnails[4].url;
             var id = post.videoId;
 
-            var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><button onclick="Play(\'' + id + '\',\'' + thumbnail + '\',\'' + title + '\')">Play</button><a href="youtube.html?id=' + id + '">Download</a><a target="_blank" href="https://www.youtube.com/watch?v=' + id + '">Watch In Youtube</a></td></tr>';
+            var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><button class="button" onclick="Play(\'' + id + '\',\'' + thumbnail + '\',\'' + title + '\')">Play</button><a class="button" href="youtube.html?id=' + id + '">Download</a><a class="button" target="_blank" href="https://www.youtube.com/watch?v=' + id + '">Watch In Youtube</a></td></tr>';
             table.innerHTML += tr;
         });
         document.getElementById("recommended").innerHTML = "";
@@ -63,7 +63,7 @@ function Play(id, thumb, title) {
             var thumbnail = post.videoThumbnails[4].url;
             var id = post.videoId;
 
-            var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><button onclick="Play(\'' + id + '\',\'' + thumbnail + '\',\'' + title + '\')">Play</button><a href="youtube.html?id=' + id + '">Download</a><a target="_blank" href="https://www.youtube.com/watch?v=' + id + '">Watch In Youtube</a></td></tr>';
+            var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><button onclick="Play(\'' + id + '\',\'' + thumbnail + '\',\'' + title + '\')">Play</button><a class="button" href="youtube.html?id=' + id + '">Download</a><a class="button" target="_blank" href="https://www.youtube.com/watch?v=' + id + '">Watch In Youtube</a></td></tr>';
             recommend.innerHTML += tr;
         })
     });
