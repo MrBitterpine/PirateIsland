@@ -29,7 +29,7 @@ function LoadMovies(page) {
 var page = 1;
 LoadMovies(page)
 window.onscroll = function() {
-    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight && document.getElementById("moviecollection").style.display != "none") {
         page++
         LoadMovies(page)
     }
