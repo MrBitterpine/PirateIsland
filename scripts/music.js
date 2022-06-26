@@ -63,7 +63,7 @@ function Play(id, thumb, title) {
             var thumbnail = post.videoThumbnails[4].url;
             var id = post.videoId;
 
-            var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><button onclick="Play(\'' + id + '\',\'' + thumbnail + '\',\'' + title + '\')">Play</button><a class="button" href="youtube.html?id=' + id + '">Download</a><a class="button" target="_blank" href="https://www.youtube.com/watch?v=' + id + '">Watch In Youtube</a></td></tr>';
+            var tr = '<tr><td><img src="' + thumbnail + '"></td><td>' + title + '</td><td><button class="button" onclick="Play(\'' + id + '\',\'' + thumbnail + '\',\'' + title + '\')">Play</button><a class="button" href="youtube.html?id=' + id + '">Download</a><a class="button" target="_blank" href="https://www.youtube.com/watch?v=' + id + '">Watch In Youtube</a></td></tr>';
             recommend.innerHTML += tr;
         })
     });
